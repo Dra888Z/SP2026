@@ -346,6 +346,7 @@
     <div class="stat-card"><div class="val c-green" id="d-exact">0</div><div class="lbl" id="d-exact-lbl">Točan rezultat (0b)</div></div>
     <div class="stat-card"><div class="val c-indigo" id="d-diff">0</div><div class="lbl" id="d-diff-lbl">Točna razlika (0b)</div></div>
     <div class="stat-card"><div class="val c-amber" id="d-outcome">0</div><div class="lbl" id="d-outcome-lbl">Točan ishod (0b)</div></div>
+    <div class="stat-card"><div class="val" id="d-zero" style="color:#ef4444">0</div><div class="lbl">Utakmica bez bodova</div></div>
     <div class="stat-card"><div class="val c-slate" id="d-matches">0</div><div class="lbl">Utakmica</div></div>
   </div>
   <div class="container">
@@ -391,6 +392,7 @@
     <div class="stat-card"><div class="val c-green" id="k-exact">0</div><div class="lbl" id="k-exact-lbl">Točan rezultat (0b)</div></div>
     <div class="stat-card"><div class="val c-indigo" id="k-diff">0</div><div class="lbl" id="k-diff-lbl">Točna razlika (0b)</div></div>
     <div class="stat-card"><div class="val c-amber" id="k-outcome">0</div><div class="lbl" id="k-outcome-lbl">Točan ishod (0b)</div></div>
+    <div class="stat-card"><div class="val" id="k-zero" style="color:#ef4444">0</div><div class="lbl">Utakmica bez bodova</div></div>
     <div class="stat-card"><div class="val c-slate" id="k-matches">0</div><div class="lbl">Utakmica</div></div>
   </div>
   <div class="container">
@@ -577,12 +579,14 @@ function render(player) {
   const exact   = results.filter(r=>r.pts===3).length;
   const diff    = results.filter(r=>r.pts===2).length;
   const outcome = results.filter(r=>r.pts===1).length;
+  const zero    = results.filter(r=>r.pts===0).length;
 
   document.getElementById(p+'-total').textContent   = total;
   document.getElementById(p+'-exact').textContent   = exact;
   document.getElementById(p+'-diff').textContent    = diff;
   document.getElementById(p+'-outcome').textContent = outcome;
   document.getElementById(p+'-matches').textContent = matches.length;
+  document.getElementById(p+'-zero').textContent = zero;
   document.getElementById(p+'-exact-lbl').textContent   = 'Točan rezultat (3b)';
   document.getElementById(p+'-diff-lbl').textContent    = 'Točna razlika (2b)';
   document.getElementById(p+'-outcome-lbl').textContent = 'Točan ishod (1b)';
