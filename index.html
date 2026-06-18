@@ -477,9 +477,9 @@ function render(player) {
   document.getElementById(p+'-exact-lbl').textContent   = 'Točan rezultat (3b)';
   document.getElementById(p+'-diff-lbl').textContent    = 'Točna razlika (2b)';
   document.getElementById(p+'-outcome-lbl').textContent = 'Točan ishod (1b)';
-  document.getElementById(p+'-exact').innerHTML   = `${exact} <span class="sub-pts">(${exact*3}b)</span>`;
-  document.getElementById(p+'-diff').innerHTML    = `${diff} <span class="sub-pts">(${diff*2}b)</span>`;
-  document.getElementById(p+'-outcome').innerHTML = `${outcome} <span class="sub-pts">(${outcome}b)</span>`;
+  document.getElementById(p+'-exact').innerHTML   = `${exact}<span class="sub-pts">x (${exact*3}b)</span>`;
+  document.getElementById(p+'-diff').innerHTML    = `${diff}<span class="sub-pts">x (${diff*2}b)</span>`;
+  document.getElementById(p+'-outcome').innerHTML = `${outcome}<span class="sub-pts">x (${outcome}b)</span>`;
 
   // update pills & leaderboard
   document.getElementById('pill-'+player).textContent = total;
