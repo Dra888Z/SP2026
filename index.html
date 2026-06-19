@@ -7,6 +7,12 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <title>Svjetsko prvenstvo u nogometu 2026.</title>
+<script>
+  // Sinkrono — izvršava se PRIJE iscrtavanja body-a, nema flasha admin UI-a
+  if (sessionStorage.getItem('pin_ok') === 'readonly') {
+    document.documentElement.classList.add('is-readonly');
+  }
+</script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; min-height: 100vh; }
@@ -279,6 +285,15 @@
       display: block; font-size: 11px; color: #94a3b8; margin-top: 4px;
     }
   }
+
+  /* Read-only mode — primijenjeno odmah iz sessionStorage, bez flasha */
+  .is-readonly #gh-save-btn,
+  .is-readonly button[onclick="resetGHToken()"],
+  .is-readonly .add-section,
+  .is-readonly .btn-clear,
+  .is-readonly .del-btn { display: none !important; }
+  .is-readonly .score-in-sm,
+  .is-readonly .tip-input { pointer-events: none; opacity: .6; }
 
   /* Token modal */
   #token-modal-overlay {
