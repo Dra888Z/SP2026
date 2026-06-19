@@ -758,21 +758,25 @@ function updateLeaderboard() {
   const names = { drazen: 'Dražen', dinko: 'Dinko', matej: 'Matej', nikola: 'Nikola' };
   const scores = PLAYERS.map(pl => ({
     pl, pts: +document.getElementById('lead-pts-'+pl).textContent
-  }));
-  const maxPts = Math.max(...scores.map(s => s.pts));
-  scores.forEach(({ pl }) => {
-    const pts = +document.getElementById('lead-pts-'+pl).textContent;
+  })).sort((a, b) => b.pts - a.pts);
+
+  // Poredaj DOM elemente prema bodovima
+  const leaderEl = document.querySelector('.leader');
+  const winnerEl = document.getElementById('lead-winner');
+  scores.forEach(({ pl }) => leaderEl.insertBefore(document.getElementById('lead-'+pl), winnerEl));
+
+  const maxPts = scores[0].pts;
+  scores.forEach(({ pl, pts }) => {
     document.getElementById('lead-'+pl).style.fontWeight = pts === maxPts ? '700' : '400';
   });
+
   const leaders = scores.filter(s => s.pts === maxPts);
   const winner = document.getElementById('lead-winner');
   if (leaders.length > 1) {
     winner.textContent = '🤝 Izjednačeno!';
   } else {
-    const lead = leaders[0];
-    const second = scores.filter(s => s.pl !== lead.pl).sort((a,b) => b.pts-a.pts)[0];
-    const diff = lead.pts - second.pts;
-    winner.textContent = `🏆 ${names[lead.pl]} vodi za ${diff} bod${diff===1?'':'ova'}`;
+    const diff = scores[0].pts - scores[1].pts;
+    winner.textContent = `🏆 ${names[scores[0].pl]} vodi za ${diff} bod${diff===1?'':'ova'}`;
   }
 }
 
