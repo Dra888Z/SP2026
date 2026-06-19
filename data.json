@@ -9,8 +9,8 @@
     },
     {
       "id": 2,
-      "h": "Južna Koreja",
-      "a": "Češka",
+      "h": "JuÅ¾na Koreja",
+      "a": "ÄeÅ¡ka",
       "rh": 2,
       "ra": 1
     },
@@ -31,7 +31,7 @@
     {
       "id": 5,
       "h": "Katar",
-      "a": "Švicarska",
+      "a": "Å vicarska",
       "rh": 1,
       "ra": 1
     },
@@ -45,7 +45,7 @@
     {
       "id": 7,
       "h": "Haiti",
-      "a": "Škotska",
+      "a": "Å kotska",
       "rh": 0,
       "ra": 1
     },
@@ -58,7 +58,7 @@
     },
     {
       "id": 9,
-      "h": "Njemačka",
+      "h": "NjemaÄka",
       "a": "Curacao",
       "rh": 7,
       "ra": 1
@@ -79,14 +79,14 @@
     },
     {
       "id": 12,
-      "h": "Švedska",
+      "h": "Å vedska",
       "a": "Tunis",
       "rh": 5,
       "ra": 1
     },
     {
       "id": 13,
-      "h": "Španjolska",
+      "h": "Å panjolska",
       "a": "Zelenortska Rep.",
       "rh": 0,
       "ra": 0
@@ -122,14 +122,14 @@
     {
       "id": 18,
       "h": "Irak",
-      "a": "Norveška",
+      "a": "NorveÅ¡ka",
       "rh": 1,
       "ra": 4
     },
     {
       "id": 19,
       "h": "Argentina",
-      "a": "Alžir",
+      "a": "AlÅ¾ir",
       "rh": 3,
       "ra": 0
     },
@@ -170,8 +170,15 @@
     },
     {
       "id": 1781856084404,
-      "h": "Češka",
+      "h": "ÄeÅ¡ka",
       "a": "JAR",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1781856434157,
+      "h": "Švicarska",
+      "a": "BiH",
       "rh": null,
       "ra": null
     }
