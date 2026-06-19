@@ -1,4 +1,6 @@
-<html lang="hr"><head>
+<!DOCTYPE html>
+<html lang="hr">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Svjetsko prvenstvo u nogometu 2026.</title>
@@ -7,20 +9,16 @@
   body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; color: #1e293b; min-height: 100vh; }
 
   header {
-    background: #fff;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 16px 24px;
-    display: flex; align-items: center; gap: 12px;
+    background: #fff; border-bottom: 1px solid #e2e8f0;
+    padding: 16px 24px; display: flex; align-items: center; gap: 12px;
     box-shadow: 0 1px 4px rgba(0,0,0,.06);
   }
   header .ball { font-size: 28px; }
   header h1 { font-size: 20px; font-weight: 700; color: #0f172a; }
   header p { font-size: 12px; color: #94a3b8; margin-top: 1px; }
 
-  /* TABS */
   .tabs-bar {
-    background: #fff;
-    border-bottom: 1px solid #e2e8f0;
+    background: #fff; border-bottom: 1px solid #e2e8f0;
     display: flex; gap: 0; padding: 0 24px;
   }
   .tab-btn {
@@ -40,10 +38,7 @@
   }
   .tab-btn.active .tab-pill { background: #dbeafe; color: #2563eb; }
 
-  /* SUMMARY */
-  .summary {
-    display: flex; gap: 10px; padding: 16px 24px; flex-wrap: wrap;
-  }
+  .summary { display: flex; gap: 10px; padding: 16px 24px; flex-wrap: wrap; }
   .stat-card {
     background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
     padding: 14px 18px; display: flex; flex-direction: column;
@@ -53,15 +48,11 @@
   .stat-card .val { font-size: 30px; font-weight: 800; }
   .stat-card .lbl { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: .4px; margin-top: 2px; text-align: center; }
   .sub-pts { font-size: 14px; font-weight: 600; opacity: .6; }
-  .c-blue { color: #2563eb; }
-  .c-green { color: #16a34a; }
-  .c-indigo { color: #4f46e5; }
-  .c-amber { color: #d97706; }
-  .c-slate { color: #475569; }
+  .c-blue { color: #2563eb; } .c-green { color: #16a34a; }
+  .c-indigo { color: #4f46e5; } .c-amber { color: #d97706; } .c-slate { color: #475569; }
 
   .container { padding: 0 24px 32px; }
 
-  /* ADD FORM */
   .add-section {
     background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
     padding: 18px 20px; margin-bottom: 16px;
@@ -85,27 +76,32 @@
     padding: 9px 16px; border: none; border-radius: 6px; cursor: pointer;
     font-size: 13px; font-weight: 700; transition: opacity .15s, transform .1s;
   }
-  .btn:hover { opacity: .88; }
-  .btn:active { transform: scale(.97); }
+  .btn:hover { opacity: .88; } .btn:active { transform: scale(.97); }
   .btn-add { background: #2563eb; color: #fff; align-self: flex-end; }
   .btn-clear { background: #fee2e2; color: #b91c1c; align-self: flex-end; }
   .btn-export { background: #dcfce7; color: #15803d; }
-
   .actions { display: flex; gap: 8px; margin-bottom: 14px; }
 
-  /* TABLE */
   .table-wrap {
     background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
     overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.04);
   }
   table { width: 100%; border-collapse: collapse; font-size: 13.5px; table-layout: fixed; }
-  col.c-num     { width: 40px; }
-  col.c-teams   { width: 220px; }
-  col.c-tip     { width: 76px; }
-  col.c-actual  { width: 100px; }
-  col.c-pts     { width: 60px; }
-  col.c-reason  { width: 160px; }
-  col.c-del     { width: 32px; }
+
+  /* Utakmice table */
+  #panel-utakmice col.c-num    { width: 40px; }
+  #panel-utakmice col.c-teams  { width: auto; }
+  #panel-utakmice col.c-actual { width: 130px; }
+  #panel-utakmice col.c-del    { width: 36px; }
+
+  /* Player tables — auto layout so Utakmica column fills available space */
+  #panel-drazen table, #panel-dinko table { table-layout: auto; }
+  #panel-drazen col.c-num, #panel-dinko col.c-num       { width: 36px; }
+  #panel-drazen col.c-tip, #panel-dinko col.c-tip       { width: 76px; }
+  #panel-drazen col.c-actual, #panel-dinko col.c-actual { width: 130px; }
+  #panel-drazen col.c-pts, #panel-dinko col.c-pts       { width: 76px; }
+  #panel-drazen col.c-reason, #panel-dinko col.c-reason { width: 160px; }
+
   thead tr { background: #f8fafc; }
   thead th {
     padding: 7px 10px; text-align: left; color: #64748b;
@@ -120,10 +116,35 @@
   td.score { font-family: monospace; font-size: 14px; }
   td.actual { color: #64748b; }
 
+  .score-in-sm {
+    width: 36px; text-align: center; font-family: monospace; font-weight: 700;
+    background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 5px;
+    color: #1e293b; padding: 4px 3px; font-size: 13px; outline: none;
+    transition: border-color .2s;
+  }
+  .score-in-sm:focus { border-color: #2563eb; background: #fff; }
+  .score-cell { display: flex; align-items: center; gap: 3px; }
+  .score-sep { color: #94a3b8; font-weight: 700; font-size: 14px; font-family: monospace; }
+
+  /* Hide number spinners globally */
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type=number] { -moz-appearance: textfield; }
+
+  /* Tip input in player tabs — looks like plain text, editable on click */
+  .tip-input {
+    font-family: monospace; font-size: 14px; font-weight: 600;
+    background: transparent; border: 1px solid transparent; border-radius: 4px;
+    width: 46px; text-align: center; color: #1e293b; outline: none;
+    padding: 2px 3px; cursor: pointer; transition: background .15s, border-color .15s;
+  }
+  .tip-input:hover { background: #f1f5f9; border-color: #e2e8f0; }
+  .tip-input:focus { background: #fff; border-color: #2563eb; cursor: text; }
+  .tip-input::placeholder { color: #cbd5e1; font-weight: 400; }
+
   .badge {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 24px; height: 24px; border-radius: 50%;
-    font-weight: 800; font-size: 13px;
+    width: 24px; height: 24px; border-radius: 50%; font-weight: 800; font-size: 13px;
   }
   .b3 { background: #dcfce7; color: #16a34a; }
   .b2 { background: #dbeafe; color: #2563eb; }
@@ -136,7 +157,6 @@
     padding: 1px 5px; font-weight: 700; vertical-align: middle;
   }
   .reason { font-size: 11px; color: #94a3b8; }
-
   .del-btn {
     background: none; border: none; color: #cbd5e1; cursor: pointer;
     font-size: 14px; padding: 3px 7px; border-radius: 4px;
@@ -144,7 +164,7 @@
   }
   .del-btn:hover { color: #ef4444; background: #fee2e2; }
 
-  /* PIN OVERLAY */
+  /* PIN */
   #pin-overlay {
     position: fixed; inset: 0; z-index: 9999;
     background: linear-gradient(135deg, #1e3a5f, #0f172a);
@@ -159,32 +179,22 @@
   #pin-box h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
   #pin-box p { font-size: 13px; color: #94a3b8; margin-bottom: 24px; }
   .pin-dots { display: flex; justify-content: center; gap: 12px; margin-bottom: 24px; }
-  .pin-dot {
-    width: 14px; height: 14px; border-radius: 50%;
-    background: #e2e8f0; transition: background .15s;
-  }
+  .pin-dot { width: 14px; height: 14px; border-radius: 50%; background: #e2e8f0; transition: background .15s; }
   .pin-dot.filled { background: #2563eb; }
   .pin-numpad { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
   .pin-key {
     background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px;
     padding: 14px; font-size: 18px; font-weight: 700; color: #1e293b;
-    cursor: pointer; transition: background .1s, transform .1s;
-    user-select: none;
+    cursor: pointer; transition: background .1s, transform .1s; user-select: none;
   }
   .pin-key:hover { background: #eff6ff; border-color: #bfdbfe; }
   .pin-key:active { transform: scale(.94); }
   .pin-key.del { font-size: 14px; color: #64748b; }
   .pin-key.empty { background: transparent; border: none; cursor: default; }
-  #pin-error {
-    font-size: 12px; color: #ef4444; margin-top: 12px;
-    min-height: 16px; font-weight: 600;
-  }
+  #pin-error { font-size: 12px; color: #ef4444; margin-top: 12px; min-height: 16px; font-weight: 600; }
 
-  .empty-msg {
-    text-align: center; padding: 40px; color: #94a3b8; font-size: 14px;
-  }
+  .empty-msg { text-align: center; padding: 40px; color: #94a3b8; font-size: 14px; }
 
-  /* LEADERBOARD strip */
   .leader {
     background: linear-gradient(90deg, #eff6ff, #f0fdf4);
     border: 1px solid #bfdbfe; border-radius: 10px;
@@ -192,19 +202,16 @@
     display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
   }
   .leader h3 { font-size: 13px; font-weight: 700; color: #374151; flex: none; }
-  .leader-item {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 14px; font-weight: 600;
-  }
+  .leader-item { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
   .leader-item .pts { font-size: 20px; font-weight: 800; }
-  .trophy { font-size: 20px; }
 
   @media (max-width: 640px) {
     .team-in { width: 110px; }
     header h1 { font-size: 14px; }
     header p { display: none; }
-    #save-btn { font-size: 12px; padding: 8px 12px; }
-    .tab-btn { padding: 10px 12px; font-size: 13px; }
+    #save-btn { font-size: 11px; padding: 8px 8px; }
+    #gh-save-btn { font-size: 12px; padding: 8px 10px; }
+    .tab-btn { padding: 10px 10px; font-size: 12px; gap: 4px; }
     .summary { padding: 10px 12px; gap: 6px; }
     .stat-card { min-width: calc(50% - 3px); padding: 10px 10px; }
     .stat-card .val { font-size: 20px; }
@@ -216,60 +223,59 @@
     .form-row .form-group:nth-child(2) { width: calc(50% - 4px); flex: none; }
     .form-row .form-group:nth-child(1) input,
     .form-row .form-group:nth-child(2) input { width: 100%; }
-    .form-row .form-group:nth-child(3),
-    .form-row .form-group:nth-child(4) { flex: 1; }
     .btn-add { width: 100%; padding: 10px; flex: none; }
     .leader { padding: 10px 12px; gap: 4px; flex-direction: column; align-items: flex-start; }
     .leader h3 { margin-bottom: 2px; }
     #lead-winner { margin-left: 0; }
 
-    /* Tablica — kartični prikaz na mobitelu */
     .table-wrap { background: transparent; border: none; box-shadow: none; overflow: visible; }
     table, colgroup, col, thead, tbody, th, td, tr { display: block; width: 100%; }
     thead { display: none; }
     tbody tr {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      margin-bottom: 8px;
-      padding: 10px 60px 10px 12px;
-      overflow: visible;
-      white-space: normal;
-      position: relative;
+      background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
+      margin-bottom: 8px; padding: 10px 12px;
+      overflow: visible; white-space: normal; position: relative;
     }
     td { padding: 0; overflow: visible; white-space: normal; font-size: 13px; border: none; width: auto; }
-
-    td:nth-child(1) { display: none; } /* broj */
-    td:nth-child(6) { display: block; font-size: 11px; color: #94a3b8; margin-top: 2px; }
-
-    td.teams { font-weight: 700; font-size: 13px; margin-bottom: 6px; }
+    td:nth-child(1) { display: none; }
+    td.teams { font-weight: 700; font-size: 13px; display: block; margin-bottom: 6px; padding-right: 36px; }
     .exact-tag { display: inline-block; }
-
-    /* Rezultati u jednom retku */
-    td:nth-child(3),
-    td:nth-child(4) { display: inline; font-family: monospace; font-size: 13px; }
-    td:nth-child(3)::before { content: 'Tip: '; font-family: sans-serif; font-size: 11px; color: #94a3b8; }
-    td:nth-child(4)::before { content: '  →  '; color: #94a3b8; font-family: sans-serif; }
-
-    /* Bodovi badge — apsolutno pozicioniran gore desno */
-    td:nth-child(5) {
-      position: absolute;
-      top: 10px;
-      right: 30px;
-    }
-    td:nth-child(7) { /* delete */
-      position: absolute;
-      top: 10px;
-      right: 6px;
-    }
     .badge { width: 26px; height: 26px; font-size: 13px; }
+
+    /* Utakmice panel */
+    #panel-utakmice tbody tr { padding: 10px 44px 10px 12px; }
+    #panel-utakmice td:nth-child(3) { display: block; margin-top: 4px; }
+    #panel-utakmice td:nth-child(4) {
+      position: absolute; top: 50%; right: 6px; transform: translateY(-50%);
+    }
+
+    /* Player panels */
+    #panel-drazen tbody tr, #panel-dinko tbody tr { padding: 10px 44px 10px 12px; }
+    #panel-drazen td:nth-child(3), #panel-dinko td:nth-child(3) {
+      display: flex; align-items: center; gap: 6px; margin-top: 2px;
+    }
+    #panel-drazen td:nth-child(3)::before, #panel-dinko td:nth-child(3)::before {
+      content: 'Tip:'; font-size: 11px; color: #94a3b8; white-space: nowrap; flex: none;
+    }
+    #panel-drazen .tip-input, #panel-dinko .tip-input { width: 42px; }
+    #panel-drazen td:nth-child(4), #panel-dinko td:nth-child(4) {
+      display: flex; align-items: center; gap: 4px; margin-top: 2px;
+    }
+    #panel-drazen td:nth-child(4)::before, #panel-dinko td:nth-child(4)::before {
+      content: 'Rezultat:'; font-size: 11px; color: #94a3b8; white-space: nowrap; flex: none;
+    }
+    #panel-drazen td:nth-child(5), #panel-dinko td:nth-child(5) {
+      position: absolute; top: 10px; right: 8px;
+    }
+    #panel-drazen td:nth-child(6), #panel-dinko td:nth-child(6) {
+      display: block; font-size: 11px; color: #94a3b8; margin-top: 4px;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- PIN OVERLAY -->
-<div id="pin-overlay" style="display: none;">
+<div id="pin-overlay">
   <div id="pin-box">
     <div class="ball">⚽</div>
     <h2>SP 2026</h2>
@@ -304,581 +310,128 @@
     <h1>Svjetsko prvenstvo u nogometu 2026.</h1>
     <p>Kalkulator bodova</p>
   </div>
-  <button id="save-btn" class="btn" onclick="saveAsHTML()" style="margin-left:auto;background:#1d4ed8;color:#fff;padding:10px 20px;font-size:14px;">
-    💾 Spremi datoteku
-  </button>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:8px;">
+    <button id="gh-save-btn" class="btn" onclick="saveToGitHub()"
+      style="background:#1d4ed8;color:#fff;padding:10px 18px;font-size:14px;">
+      ☁️ Spremi na GitHub
+    </button>
+    <button id="save-btn" class="btn" onclick="saveAsHTML()"
+      style="background:#f1f5f9;color:#475569;padding:10px 14px;font-size:13px;" title="Preuzmi lokalnu kopiju">
+      ⬇ Preuzmi
+    </button>
+    <button class="btn" onclick="resetGHToken()" title="Promijeni GitHub token"
+      style="background:#f1f5f9;color:#94a3b8;padding:10px 10px;font-size:13px;">⚙</button>
+  </div>
 </header>
 
 <div class="tabs-bar">
-  <button class="tab-btn" onclick="switchTab('drazen')" id="tab-drazen">
-    🟦 Dražen <span class="tab-pill" id="pill-drazen">26</span>
+  <button class="tab-btn active" onclick="switchTab('utakmice')" id="tab-utakmice">
+    📋 Utakmice <span class="tab-pill" id="pill-utakmice">0</span>
   </button>
-  <button class="tab-btn active" onclick="switchTab('dinko')" id="tab-dinko">
-    🟥 Dinko <span class="tab-pill" id="pill-dinko">24</span>
+  <button class="tab-btn" onclick="switchTab('drazen')" id="tab-drazen">
+    🟦 Dražen <span class="tab-pill" id="pill-drazen">0</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('dinko')" id="tab-dinko">
+    🟥 Dinko <span class="tab-pill" id="pill-dinko">0</span>
   </button>
 </div>
 
-<!-- LEADERBOARD -->
 <div style="padding: 14px 24px 0">
   <div class="leader">
     <h3>🏆 Vodstvo</h3>
-    <div class="leader-item" id="lead-drazen" style="font-weight: 700;">
+    <div class="leader-item" id="lead-drazen">
       <span>🟦 Dražen</span>
-      <span class="pts c-blue" id="lead-pts-drazen">26</span>
+      <span class="pts c-blue" id="lead-pts-drazen">0</span>
       <span style="font-size:12px;color:#94a3b8">bod.</span>
     </div>
-    <div class="leader-item" id="lead-dinko" style="font-weight: 400;">
+    <div class="leader-item" id="lead-dinko">
       <span>🟥 Dinko</span>
-      <span class="pts c-slate" id="lead-pts-dinko">24</span>
+      <span class="pts c-slate" id="lead-pts-dinko">0</span>
       <span style="font-size:12px;color:#94a3b8">bod.</span>
     </div>
-    <div id="lead-winner" style="font-size:13px;color:#64748b;margin-left:auto">🏆 Dražen vodi za 2 bodova</div>
+    <div id="lead-winner" style="font-size:13px;color:#64748b;margin-left:auto"></div>
   </div>
 </div>
 
-<!-- PER-PLAYER PANEL -->
-<div id="panel-drazen" style="display: none;">
-  <div class="summary">
-    <div class="stat-card"><div class="val c-blue" id="d-total">26</div><div class="lbl">Ukupno bodova</div></div>
-    <div class="stat-card"><div class="val c-green" id="d-exact">3<span class="sub-pts">x (9b)</span></div><div class="lbl" id="d-exact-lbl">Točan rezultat (3b)</div></div>
-    <div class="stat-card"><div class="val c-indigo" id="d-diff">4<span class="sub-pts">x (8b)</span></div><div class="lbl" id="d-diff-lbl">Točna razlika (2b)</div></div>
-    <div class="stat-card"><div class="val c-amber" id="d-outcome">9<span class="sub-pts">x (9b)</span></div><div class="lbl" id="d-outcome-lbl">Točan ishod (1b)</div></div>
-    <div class="stat-card"><div class="val" id="d-zero" style="color:#ef4444">12</div><div class="lbl">Utakmica bez bodova</div></div>
-    <div class="stat-card"><div class="val c-slate" id="d-matches">28</div><div class="lbl">Utakmica</div></div>
-  </div>
-  <div class="container">
+<!-- PANEL: Utakmice -->
+<div id="panel-utakmice">
+  <div class="container" style="padding-top:14px">
     <div class="add-section">
-      <h2>➕ Dodaj utakmicu za Dražena</h2>
+      <h2>➕ Dodaj utakmicu</h2>
       <div class="form-row">
-        <div class="form-group"><label>Domaćin</label><input type="text" id="dh" class="team-in" placeholder="npr. Brazil"></div>
-        <div class="form-group"><label>Gost</label><input type="text" id="da" class="team-in" placeholder="npr. Hrvatska"></div>
-        <div class="form-group"><label>Moj tip</label>
+        <div class="form-group"><label>Domaćin</label><input type="text" id="mh" class="team-in" placeholder="npr. Brazil"></div>
+        <div class="form-group"><label>Gost</label><input type="text" id="ma" class="team-in" placeholder="npr. Hrvatska"></div>
+        <div class="form-group">
+          <label>Stvarni rezultat <span style="font-weight:400;text-transform:none;color:#94a3b8">(opcija)</span></label>
           <div style="display:flex;align-items:center;gap:4px">
-            <input type="number" id="dph" class="score-in" min="0" max="99" placeholder="0">
+            <input type="number" id="mrh" class="score-in" min="0" max="99" placeholder="–">
             <span class="colon">:</span>
-            <input type="number" id="dpa" class="score-in" min="0" max="99" placeholder="0">
+            <input type="number" id="mra" class="score-in" min="0" max="99" placeholder="–">
           </div>
         </div>
-        <div class="form-group"><label>Stvarni rezultat</label>
-          <div style="display:flex;align-items:center;gap:4px">
-            <input type="number" id="drh" class="score-in" min="0" max="99" placeholder="0">
-            <span class="colon">:</span>
-            <input type="number" id="dra" class="score-in" min="0" max="99" placeholder="0">
-          </div>
-        </div>
-        <button class="btn btn-add" onclick="addMatch('drazen')">Dodaj</button>
+        <button class="btn btn-add" onclick="addMatch()">Dodaj</button>
       </div>
     </div>
     <div class="actions">
-      <button class="btn btn-export" onclick="exportCSV('drazen')">⬇ Izvezi CSV</button>
-      <button class="btn btn-clear" onclick="clearAll('drazen')">🗑 Obriši sve</button>
+      <button class="btn btn-export" onclick="exportCSV()">⬇ Izvezi CSV</button>
+      <button class="btn btn-clear" onclick="clearAllMatches()">🗑 Obriši sve</button>
     </div>
     <div class="table-wrap">
-      <table><colgroup><col class="c-num"><col class="c-teams"><col class="c-tip"><col class="c-actual"><col class="c-pts"><col class="c-reason"><col class="c-del"></colgroup><thead><tr>
-        <th>#</th><th>Utakmica</th><th>Moj tip</th><th>Stvarni rezultat</th><th>Bodovi</th><th>Komentar</th><th></th>
-      </tr></thead>
-      <tbody id="tbody-drazen"><tr>
-      <td style="color:#94a3b8;font-size:12px">1</td>
-      <td class="teams">Meksiko – JAR<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">2:0</td>
-      <td class="score actual">2:0</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',1)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">2</td>
-      <td class="teams">Južna Koreja – Češka</td>
-      <td class="score">0:1</td>
-      <td class="score actual">2:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',2)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">3</td>
-      <td class="teams">Kanada – BiH</td>
-      <td class="score">2:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',3)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">4</td>
-      <td class="teams">SAD – Paragvaj</td>
-      <td class="score">2:1</td>
-      <td class="score actual">4:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',4)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">5</td>
-      <td class="teams">Katar – Švicarska</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',5)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">6</td>
-      <td class="teams">Brazil – Maroko</td>
-      <td class="score">2:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',6)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">7</td>
-      <td class="teams">Haiti – Škotska</td>
-      <td class="score">0:2</td>
-      <td class="score actual">0:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',7)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">8</td>
-      <td class="teams">Australija – Turska</td>
-      <td class="score">0:1</td>
-      <td class="score actual">2:0</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',8)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">9</td>
-      <td class="teams">Njemačka – Curacao</td>
-      <td class="score">5:0</td>
-      <td class="score actual">7:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',9)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">10</td>
-      <td class="teams">Nizozemska – Japan</td>
-      <td class="score">2:1</td>
-      <td class="score actual">2:2</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',10)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">11</td>
-      <td class="teams">Obala Bjelokosti – Ekvador</td>
-      <td class="score">1:1</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',11)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">12</td>
-      <td class="teams">Švedska – Tunis</td>
-      <td class="score">1:0</td>
-      <td class="score actual">5:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',12)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">13</td>
-      <td class="teams">Španjolska – Zelenortska Rep.</td>
-      <td class="score">4:0</td>
-      <td class="score actual">0:0</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',13)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">14</td>
-      <td class="teams">Belgija – Egipat<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">1:1</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',14)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">15</td>
-      <td class="teams">Saudijska Arabija – Urugvaj</td>
-      <td class="score">0:1</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',15)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">16</td>
-      <td class="teams">Iran – Novi Zeland</td>
-      <td class="score">1:0</td>
-      <td class="score actual">2:2</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',16)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">17</td>
-      <td class="teams">Francuska – Senegal</td>
-      <td class="score">2:0</td>
-      <td class="score actual">3:1</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',17)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">18</td>
-      <td class="teams">Irak – Norveška</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:4</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',18)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">19</td>
-      <td class="teams">Argentina – Alžir</td>
-      <td class="score">2:0</td>
-      <td class="score actual">3:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',19)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">20</td>
-      <td class="teams">Austrija – Jordan</td>
-      <td class="score">1:0</td>
-      <td class="score actual">3:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',20)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">21</td>
-      <td class="teams">Portugal – DR Kongo</td>
-      <td class="score">2:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',21)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">22</td>
-      <td class="teams">Engleska – Hrvatska</td>
-      <td class="score">2:0</td>
-      <td class="score actual">4:2</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',22)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">23</td>
-      <td class="teams">Gana – Panama<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">1:0</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',23)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">24</td>
-      <td class="teams">Uzbekistan – Kolumbija</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:3</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',24)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">25</td>
-      <td class="teams">Češka – JAR</td>
-      <td class="score">1:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',1781848589270)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">26</td>
-      <td class="teams">Švicarska – Bih</td>
-      <td class="score">1:0</td>
-      <td class="score actual">4:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',1781848639192)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">27</td>
-      <td class="teams">Kanada – Katar</td>
-      <td class="score">2:1</td>
-      <td class="score actual">6:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',1781848678962)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">28</td>
-      <td class="teams">Meksiko – Južna Koreja</td>
-      <td class="score">2:1</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('drazen',1781848743132)">✕</button></td>
-    </tr></tbody></table>
-      <div class="empty-msg" id="empty-drazen" style="display:none">Još nema utakmica ☝</div>
+      <table>
+        <colgroup><col class="c-num"><col class="c-teams"><col class="c-actual"><col class="c-del"></colgroup>
+        <thead><tr><th>#</th><th>Utakmica</th><th>Stvarni rezultat</th><th></th></tr></thead>
+        <tbody id="tbody-utakmice"></tbody>
+      </table>
+      <div class="empty-msg" id="empty-utakmice" style="display:none">Još nema utakmica ☝</div>
     </div>
   </div>
 </div>
 
-<div id="panel-dinko" style="">
+<!-- PANEL: Dražen -->
+<div id="panel-drazen" style="display:none">
   <div class="summary">
-    <div class="stat-card"><div class="val c-blue" id="k-total">24</div><div class="lbl">Ukupno bodova</div></div>
-    <div class="stat-card"><div class="val c-green" id="k-exact">3<span class="sub-pts">x (9b)</span></div><div class="lbl" id="k-exact-lbl">Točan rezultat (3b)</div></div>
-    <div class="stat-card"><div class="val c-indigo" id="k-diff">2<span class="sub-pts">x (4b)</span></div><div class="lbl" id="k-diff-lbl">Točna razlika (2b)</div></div>
-    <div class="stat-card"><div class="val c-amber" id="k-outcome">11<span class="sub-pts">x (11b)</span></div><div class="lbl" id="k-outcome-lbl">Točan ishod (1b)</div></div>
-    <div class="stat-card"><div class="val" id="k-zero" style="color:#ef4444">12</div><div class="lbl">Utakmica bez bodova</div></div>
-    <div class="stat-card"><div class="val c-slate" id="k-matches">28</div><div class="lbl">Utakmica</div></div>
+    <div class="stat-card"><div class="val c-blue" id="d-total">0</div><div class="lbl">Ukupno bodova</div></div>
+    <div class="stat-card"><div class="val c-green" id="d-exact">0</div><div class="lbl" id="d-exact-lbl">Točan rezultat (3b)</div></div>
+    <div class="stat-card"><div class="val c-indigo" id="d-diff">0</div><div class="lbl" id="d-diff-lbl">Točna razlika (2b)</div></div>
+    <div class="stat-card"><div class="val c-amber" id="d-outcome">0</div><div class="lbl" id="d-outcome-lbl">Točan ishod (1b)</div></div>
+    <div class="stat-card"><div class="val" id="d-zero" style="color:#ef4444">0</div><div class="lbl">Utakmica bez bodova</div></div>
+    <div class="stat-card"><div class="val c-slate" id="d-matches">0</div><div class="lbl">Utakmica</div></div>
   </div>
   <div class="container">
-    <div class="add-section">
-      <h2>➕ Dodaj utakmicu za Dinka</h2>
-      <div class="form-row">
-        <div class="form-group"><label>Domaćin</label><input type="text" id="kh" class="team-in" placeholder="npr. Brazil"></div>
-        <div class="form-group"><label>Gost</label><input type="text" id="ka" class="team-in" placeholder="npr. Hrvatska"></div>
-        <div class="form-group"><label>Moj tip</label>
-          <div style="display:flex;align-items:center;gap:4px">
-            <input type="number" id="kph" class="score-in" min="0" max="99" placeholder="0">
-            <span class="colon">:</span>
-            <input type="number" id="kpa" class="score-in" min="0" max="99" placeholder="0">
-          </div>
-        </div>
-        <div class="form-group"><label>Stvarni rezultat</label>
-          <div style="display:flex;align-items:center;gap:4px">
-            <input type="number" id="krh" class="score-in" min="0" max="99" placeholder="0">
-            <span class="colon">:</span>
-            <input type="number" id="kra" class="score-in" min="0" max="99" placeholder="0">
-          </div>
-        </div>
-        <button class="btn btn-add" onclick="addMatch('dinko')">Dodaj</button>
-      </div>
-    </div>
-    <div class="actions">
-      <button class="btn btn-export" onclick="exportCSV('dinko')">⬇ Izvezi CSV</button>
-      <button class="btn btn-clear" onclick="clearAll('dinko')">🗑 Obriši sve</button>
-    </div>
     <div class="table-wrap">
-      <table><colgroup><col class="c-num"><col class="c-teams"><col class="c-tip"><col class="c-actual"><col class="c-pts"><col class="c-reason"><col class="c-del"></colgroup><thead><tr>
-        <th>#</th><th>Utakmica</th><th>Moj tip</th><th>Stvarni rezultat</th><th>Bodovi</th><th>Komentar</th><th></th>
-      </tr></thead>
-      <tbody id="tbody-dinko"><tr>
-      <td style="color:#94a3b8;font-size:12px">1</td>
-      <td class="teams">Meksiko – JAR</td>
-      <td class="score">1:0</td>
-      <td class="score actual">2:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',1)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">2</td>
-      <td class="teams">Južna Koreja – Češka</td>
-      <td class="score">0:0</td>
-      <td class="score actual">2:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',2)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">3</td>
-      <td class="teams">Kanada – BiH<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">1:1</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',3)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">4</td>
-      <td class="teams">SAD – Paragvaj</td>
-      <td class="score">1:0</td>
-      <td class="score actual">4:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',4)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">5</td>
-      <td class="teams">Katar – Švicarska</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',5)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">6</td>
-      <td class="teams">Brazil – Maroko</td>
-      <td class="score">2:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',6)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">7</td>
-      <td class="teams">Haiti – Škotska</td>
-      <td class="score">0:2</td>
-      <td class="score actual">0:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',7)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">8</td>
-      <td class="teams">Australija – Turska</td>
-      <td class="score">0:3</td>
-      <td class="score actual">2:0</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',8)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">9</td>
-      <td class="teams">Njemačka – Curacao</td>
-      <td class="score">3:0</td>
-      <td class="score actual">7:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',9)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">10</td>
-      <td class="teams">Nizozemska – Japan</td>
-      <td class="score">2:1</td>
-      <td class="score actual">2:2</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',10)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">11</td>
-      <td class="teams">Obala Bjelokosti – Ekvador<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">1:0</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',11)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">12</td>
-      <td class="teams">Švedska – Tunis</td>
-      <td class="score">1:1</td>
-      <td class="score actual">5:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',12)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">13</td>
-      <td class="teams">Španjolska – Zelenortska Rep.</td>
-      <td class="score">4:0</td>
-      <td class="score actual">0:0</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',13)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">14</td>
-      <td class="teams">Belgija – Egipat</td>
-      <td class="score">2:1</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',14)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">15</td>
-      <td class="teams">Saudijska Arabija – Urugvaj</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',15)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">16</td>
-      <td class="teams">Iran – Novi Zeland</td>
-      <td class="score">1:1</td>
-      <td class="score actual">2:2</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',16)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">17</td>
-      <td class="teams">Francuska – Senegal<span class="exact-tag">TOČAN ✓</span></td>
-      <td class="score">3:1</td>
-      <td class="score actual">3:1</td>
-      <td><span class="badge b3">3</span></td>
-      <td class="reason">Točan rezultat ✓</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',17)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">18</td>
-      <td class="teams">Irak – Norveška</td>
-      <td class="score">0:2</td>
-      <td class="score actual">1:4</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',18)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">19</td>
-      <td class="teams">Argentina – Alžir</td>
-      <td class="score">3:1</td>
-      <td class="score actual">3:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',19)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">20</td>
-      <td class="teams">Austrija – Jordan</td>
-      <td class="score">3:0</td>
-      <td class="score actual">3:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',20)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">21</td>
-      <td class="teams">Portugal – DR Kongo</td>
-      <td class="score">3:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',21)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">22</td>
-      <td class="teams">Engleska – Hrvatska</td>
-      <td class="score">0:0</td>
-      <td class="score actual">4:2</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',22)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">23</td>
-      <td class="teams">Gana – Panama</td>
-      <td class="score">3:0</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',23)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">24</td>
-      <td class="teams">Uzbekistan – Kolumbija</td>
-      <td class="score">0:3</td>
-      <td class="score actual">1:3</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',24)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">25</td>
-      <td class="teams">Češka – JAR</td>
-      <td class="score">2:0</td>
-      <td class="score actual">1:1</td>
-      <td><span class="badge b0">0</span></td>
-      <td class="reason">Pogrešan ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',1781848610718)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">26</td>
-      <td class="teams">Švicarska – Bih</td>
-      <td class="score">2:0</td>
-      <td class="score actual">4:1</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',1781848654438)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">27</td>
-      <td class="teams">Kanada – Katar</td>
-      <td class="score">2:0</td>
-      <td class="score actual">6:0</td>
-      <td><span class="badge b1">1</span></td>
-      <td class="reason">Točan pobjednik/ishod</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',1781848700328)">✕</button></td>
-    </tr><tr>
-      <td style="color:#94a3b8;font-size:12px">28</td>
-      <td class="teams">Meksiko – Južna Koreja</td>
-      <td class="score">2:1</td>
-      <td class="score actual">1:0</td>
-      <td><span class="badge b2">2</span></td>
-      <td class="reason">Točna razlika golova</td>
-      <td><button class="del-btn" onclick="deleteMatch('dinko',1781848758022)">✕</button></td>
-    </tr></tbody></table>
-      <div class="empty-msg" id="empty-dinko" style="display:none">Još nema utakmica ☝</div>
+      <table>
+        <colgroup><col class="c-num"><col class="c-teams"><col class="c-tip"><col class="c-actual"><col class="c-pts"><col class="c-reason"></colgroup>
+        <thead><tr><th>#</th><th>Utakmica</th><th>Moj tip</th><th>Stvarni rezultat</th><th>Bodovi</th><th>Komentar</th></tr></thead>
+        <tbody id="tbody-drazen"></tbody>
+      </table>
+      <div class="empty-msg" id="empty-drazen" style="display:none">Dodaj utakmice u kartici „Utakmice" ☝</div>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL: Dinko -->
+<div id="panel-dinko" style="display:none">
+  <div class="summary">
+    <div class="stat-card"><div class="val c-blue" id="k-total">0</div><div class="lbl">Ukupno bodova</div></div>
+    <div class="stat-card"><div class="val c-green" id="k-exact">0</div><div class="lbl" id="k-exact-lbl">Točan rezultat (3b)</div></div>
+    <div class="stat-card"><div class="val c-indigo" id="k-diff">0</div><div class="lbl" id="k-diff-lbl">Točna razlika (2b)</div></div>
+    <div class="stat-card"><div class="val c-amber" id="k-outcome">0</div><div class="lbl" id="k-outcome-lbl">Točan ishod (1b)</div></div>
+    <div class="stat-card"><div class="val" id="k-zero" style="color:#ef4444">0</div><div class="lbl">Utakmica bez bodova</div></div>
+    <div class="stat-card"><div class="val c-slate" id="k-matches">0</div><div class="lbl">Utakmica</div></div>
+  </div>
+  <div class="container">
+    <div class="table-wrap">
+      <table>
+        <colgroup><col class="c-num"><col class="c-teams"><col class="c-tip"><col class="c-actual"><col class="c-pts"><col class="c-reason"></colgroup>
+        <thead><tr><th>#</th><th>Utakmica</th><th>Moj tip</th><th>Stvarni rezultat</th><th>Bodovi</th><th>Komentar</th></tr></thead>
+        <tbody id="tbody-dinko"></tbody>
+      </table>
+      <div class="empty-msg" id="empty-dinko" style="display:none">Dodaj utakmice u kartici „Utakmice" ☝</div>
     </div>
   </div>
 </div>
 
 <script>
-// PIN zaštita — pohranjen samo SHA-256 hash, ne PIN
 const PIN_HASH = 'cbfad02f9ed2a8d1e08d8f74f5303e9eb93637d47f82ab6f1c15871cf8dd0481';
 let pinInput = '';
 
@@ -886,21 +439,18 @@ async function hashString(str) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
-
 function pinKey(digit) {
   if (pinInput.length >= 4) return;
   pinInput += digit;
   document.getElementById('dot-' + (pinInput.length - 1)).classList.add('filled');
   if (pinInput.length === 4) setTimeout(checkPin, 120);
 }
-
 function pinDel() {
   if (!pinInput.length) return;
   document.getElementById('dot-' + (pinInput.length - 1)).classList.remove('filled');
   pinInput = pinInput.slice(0, -1);
   document.getElementById('pin-error').textContent = '';
 }
-
 async function checkPin() {
   const h = await hashString(pinInput);
   if (h === PIN_HASH) {
@@ -908,89 +458,110 @@ async function checkPin() {
     sessionStorage.setItem('pin_ok', '1');
   } else {
     document.getElementById('pin-error').textContent = 'Pogrešan PIN. Pokušaj ponovo.';
-    // reset
     pinInput = '';
     for (let i = 0; i < 4; i++) document.getElementById('dot-' + i).classList.remove('filled');
   }
 }
-
-// Ako je PIN već unesen u ovoj sesiji, ne prikazuj overlay
 if (sessionStorage.getItem('pin_ok') === '1') {
   document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pin-overlay').style.display = 'none';
   });
 }
 
-const DRAZEN_KEY = 'tipping_drazen_v2';
-const DINKO_KEY  = 'tipping_dinko_v2';
+const MATCHES_KEY = 'tipping_matches_v3';
+const TIPS_D_KEY  = 'tipping_tips_drazen_v3';
+const TIPS_K_KEY  = 'tipping_tips_dinko_v3';
 
-const DRAZEN_DEFAULT = /*DRAZEN_START*/[
-  {h:"Meksiko",a:"JAR",ph:2,pa:0,rh:2,ra:0},
-  {h:"Južna Koreja",a:"Češka",ph:0,pa:1,rh:2,ra:1},
-  {h:"Kanada",a:"BiH",ph:2,pa:0,rh:1,ra:1},
-  {h:"SAD",a:"Paragvaj",ph:2,pa:1,rh:4,ra:1},
-  {h:"Katar",a:"Švicarska",ph:0,pa:2,rh:1,ra:1},
-  {h:"Brazil",a:"Maroko",ph:2,pa:0,rh:1,ra:1},
-  {h:"Haiti",a:"Škotska",ph:0,pa:2,rh:0,ra:1},
-  {h:"Australija",a:"Turska",ph:0,pa:1,rh:2,ra:0},
-  {h:"Njemačka",a:"Curacao",ph:5,pa:0,rh:7,ra:1},
-  {h:"Nizozemska",a:"Japan",ph:2,pa:1,rh:2,ra:2},
-  {h:"Obala Bjelokosti",a:"Ekvador",ph:1,pa:1,rh:1,ra:0},
-  {h:"Švedska",a:"Tunis",ph:1,pa:0,rh:5,ra:1},
-  {h:"Španjolska",a:"Zelenortska Rep.",ph:4,pa:0,rh:0,ra:0},
-  {h:"Belgija",a:"Egipat",ph:1,pa:1,rh:1,ra:1},
-  {h:"Saudijska Arabija",a:"Urugvaj",ph:0,pa:1,rh:1,ra:1},
-  {h:"Iran",a:"Novi Zeland",ph:1,pa:0,rh:2,ra:2},
-  {h:"Francuska",a:"Senegal",ph:2,pa:0,rh:3,ra:1},
-  {h:"Irak",a:"Norveška",ph:0,pa:2,rh:1,ra:4},
-  {h:"Argentina",a:"Alžir",ph:2,pa:0,rh:3,ra:0},
-  {h:"Austrija",a:"Jordan",ph:1,pa:0,rh:3,ra:1},
-  {h:"Portugal",a:"DR Kongo",ph:2,pa:0,rh:1,ra:1},
-  {h:"Engleska",a:"Hrvatska",ph:2,pa:0,rh:4,ra:2},
-  {h:"Gana",a:"Panama",ph:1,pa:0,rh:1,ra:0},
-  {h:"Uzbekistan",a:"Kolumbija",ph:0,pa:2,rh:1,ra:3},
-  {h:"Češka",a:"JAR",ph:1,pa:0,rh:1,ra:1},
-  {h:"Švicarska",a:"Bih",ph:1,pa:0,rh:4,ra:1},
-  {h:"Kanada",a:"Katar",ph:2,pa:1,rh:6,ra:0},
-  {h:"Meksiko",a:"Južna Koreja",ph:2,pa:1,rh:1,ra:0}
-]/*DRAZEN_END*/;
+const MATCHES_DEFAULT = /*MATCHES_START*/[
+  {id:1,h:"Meksiko",a:"JAR",rh:2,ra:0},
+  {id:2,h:"Južna Koreja",a:"Češka",rh:2,ra:1},
+  {id:3,h:"Kanada",a:"BiH",rh:1,ra:1},
+  {id:4,h:"SAD",a:"Paragvaj",rh:4,ra:1},
+  {id:5,h:"Katar",a:"Švicarska",rh:1,ra:1},
+  {id:6,h:"Brazil",a:"Maroko",rh:1,ra:1},
+  {id:7,h:"Haiti",a:"Škotska",rh:0,ra:1},
+  {id:8,h:"Australija",a:"Turska",rh:2,ra:0},
+  {id:9,h:"Njemačka",a:"Curacao",rh:7,ra:1},
+  {id:10,h:"Nizozemska",a:"Japan",rh:2,ra:2},
+  {id:11,h:"Obala Bjelokosti",a:"Ekvador",rh:1,ra:0},
+  {id:12,h:"Švedska",a:"Tunis",rh:5,ra:1},
+  {id:13,h:"Španjolska",a:"Zelenortska Rep.",rh:0,ra:0},
+  {id:14,h:"Belgija",a:"Egipat",rh:1,ra:1},
+  {id:15,h:"Saudijska Arabija",a:"Urugvaj",rh:1,ra:1},
+  {id:16,h:"Iran",a:"Novi Zeland",rh:2,ra:2},
+  {id:17,h:"Francuska",a:"Senegal",rh:3,ra:1},
+  {id:18,h:"Irak",a:"Norveška",rh:1,ra:4},
+  {id:19,h:"Argentina",a:"Alžir",rh:3,ra:0},
+  {id:20,h:"Austrija",a:"Jordan",rh:3,ra:1},
+  {id:21,h:"Portugal",a:"DR Kongo",rh:1,ra:1},
+  {id:22,h:"Engleska",a:"Hrvatska",rh:4,ra:2},
+  {id:23,h:"Gana",a:"Panama",rh:1,ra:0},
+  {id:24,h:"Uzbekistan",a:"Kolumbija",rh:1,ra:3}
+]/*MATCHES_END*/;
 
-const DINKO_DEFAULT = /*DINKO_START*/[
-  {h:"Meksiko",a:"JAR",ph:1,pa:0,rh:2,ra:0},
-  {h:"Južna Koreja",a:"Češka",ph:0,pa:0,rh:2,ra:1},
-  {h:"Kanada",a:"BiH",ph:1,pa:1,rh:1,ra:1},
-  {h:"SAD",a:"Paragvaj",ph:1,pa:0,rh:4,ra:1},
-  {h:"Katar",a:"Švicarska",ph:0,pa:2,rh:1,ra:1},
-  {h:"Brazil",a:"Maroko",ph:2,pa:0,rh:1,ra:1},
-  {h:"Haiti",a:"Škotska",ph:0,pa:2,rh:0,ra:1},
-  {h:"Australija",a:"Turska",ph:0,pa:3,rh:2,ra:0},
-  {h:"Njemačka",a:"Curacao",ph:3,pa:0,rh:7,ra:1},
-  {h:"Nizozemska",a:"Japan",ph:2,pa:1,rh:2,ra:2},
-  {h:"Obala Bjelokosti",a:"Ekvador",ph:1,pa:0,rh:1,ra:0},
-  {h:"Švedska",a:"Tunis",ph:1,pa:1,rh:5,ra:1},
-  {h:"Španjolska",a:"Zelenortska Rep.",ph:4,pa:0,rh:0,ra:0},
-  {h:"Belgija",a:"Egipat",ph:2,pa:1,rh:1,ra:1},
-  {h:"Saudijska Arabija",a:"Urugvaj",ph:0,pa:2,rh:1,ra:1},
-  {h:"Iran",a:"Novi Zeland",ph:1,pa:1,rh:2,ra:2},
-  {h:"Francuska",a:"Senegal",ph:3,pa:1,rh:3,ra:1},
-  {h:"Irak",a:"Norveška",ph:0,pa:2,rh:1,ra:4},
-  {h:"Argentina",a:"Alžir",ph:3,pa:1,rh:3,ra:0},
-  {h:"Austrija",a:"Jordan",ph:3,pa:0,rh:3,ra:1},
-  {h:"Portugal",a:"DR Kongo",ph:3,pa:0,rh:1,ra:1},
-  {h:"Engleska",a:"Hrvatska",ph:0,pa:0,rh:4,ra:2},
-  {h:"Gana",a:"Panama",ph:3,pa:0,rh:1,ra:0},
-  {h:"Uzbekistan",a:"Kolumbija",ph:0,pa:3,rh:1,ra:3},
-  {h:"Češka",a:"JAR",ph:2,pa:0,rh:1,ra:1},
-  {h:"Švicarska",a:"Bih",ph:2,pa:0,rh:4,ra:1},
-  {h:"Kanada",a:"Katar",ph:2,pa:0,rh:6,ra:0},
-  {h:"Meksiko",a:"Južna Koreja",ph:2,pa:1,rh:1,ra:0}
-]/*DINKO_END*/;
+const TIPS_DRAZEN_DEFAULT = /*TIPS_DRAZEN_START*/{
+  "1":{ph:2,pa:0},
+  "2":{ph:0,pa:1},
+  "3":{ph:2,pa:0},
+  "4":{ph:2,pa:1},
+  "5":{ph:0,pa:2},
+  "6":{ph:2,pa:0},
+  "7":{ph:0,pa:2},
+  "8":{ph:0,pa:1},
+  "9":{ph:5,pa:0},
+  "10":{ph:2,pa:1},
+  "11":{ph:1,pa:1},
+  "12":{ph:1,pa:0},
+  "13":{ph:4,pa:0},
+  "14":{ph:1,pa:1},
+  "15":{ph:0,pa:1},
+  "16":{ph:1,pa:0},
+  "17":{ph:2,pa:0},
+  "18":{ph:0,pa:2},
+  "19":{ph:2,pa:0},
+  "20":{ph:1,pa:0},
+  "21":{ph:2,pa:0},
+  "22":{ph:2,pa:0},
+  "23":{ph:1,pa:0},
+  "24":{ph:0,pa:2}
+}/*TIPS_DRAZEN_END*/;
 
-let data = { drazen: [], dinko: [] };
-let currentTab = 'drazen';
+const TIPS_DINKO_DEFAULT = /*TIPS_DINKO_START*/{
+  "1":{ph:1,pa:0},
+  "2":{ph:0,pa:0},
+  "3":{ph:1,pa:1},
+  "4":{ph:1,pa:0},
+  "5":{ph:0,pa:2},
+  "6":{ph:2,pa:0},
+  "7":{ph:0,pa:2},
+  "8":{ph:0,pa:3},
+  "9":{ph:3,pa:0},
+  "10":{ph:2,pa:1},
+  "11":{ph:1,pa:0},
+  "12":{ph:1,pa:1},
+  "13":{ph:4,pa:0},
+  "14":{ph:2,pa:1},
+  "15":{ph:0,pa:2},
+  "16":{ph:1,pa:1},
+  "17":{ph:3,pa:1},
+  "18":{ph:0,pa:2},
+  "19":{ph:3,pa:1},
+  "20":{ph:3,pa:0},
+  "21":{ph:3,pa:0},
+  "22":{ph:0,pa:0},
+  "23":{ph:3,pa:0},
+  "24":{ph:0,pa:3}
+}/*TIPS_DINKO_END*/;
 
-function calcPoints(m) {
-  const {ph,pa,rh,ra} = m;
+let data = { matches: [], tips: { drazen: {}, dinko: {} } };
+let currentTab = 'utakmice';
+
+function calcPoints(match, tip) {
+  if (!tip || tip.ph === null || tip.ph === undefined || tip.pa === null || tip.pa === undefined)
+    return {pts: null, reason: '–'};
+  if (match.rh === null || match.rh === undefined || match.ra === null || match.ra === undefined)
+    return {pts: null, reason: 'Čeka se rezultat'};
+  const {ph, pa} = tip, {rh, ra} = match;
   if (ph===rh && pa===ra) return {pts:3, reason:'Točan rezultat ✓'};
   const pW = Math.sign(ph-pa), rW = Math.sign(rh-ra);
   if (pW !== rW) return {pts:0, reason:'Pogrešan ishod'};
@@ -998,171 +569,321 @@ function calcPoints(m) {
   return {pts:1, reason:'Točan pobjednik/ishod'};
 }
 
-function load() {
-  const sd = localStorage.getItem(DRAZEN_KEY);
-  const sk = localStorage.getItem(DINKO_KEY);
-  data.drazen = sd ? JSON.parse(sd) : DRAZEN_DEFAULT.map((m,i)=>({id:i+1,...m}));
-  data.dinko  = sk ? JSON.parse(sk)  : DINKO_DEFAULT.map((m,i)=>({id:i+1,...m}));
-  if (!sd) save('drazen');
-  if (!sk) save('dinko');
-  render('drazen');
-  render('dinko');
+function saveData(which) {
+  if (which === 'matches' || which === 'all')
+    localStorage.setItem(MATCHES_KEY, JSON.stringify(data.matches));
+  if (which === 'tips_drazen' || which === 'all')
+    localStorage.setItem(TIPS_D_KEY, JSON.stringify(data.tips.drazen));
+  if (which === 'tips_dinko' || which === 'all')
+    localStorage.setItem(TIPS_K_KEY, JSON.stringify(data.tips.dinko));
 }
 
-function save(player) {
-  localStorage.setItem(player==='drazen'?DRAZEN_KEY:DINKO_KEY, JSON.stringify(data[player]));
+function load() {
+  const sm = localStorage.getItem(MATCHES_KEY);
+  const sd = localStorage.getItem(TIPS_D_KEY);
+  const sk = localStorage.getItem(TIPS_K_KEY);
+  data.matches = sm ? JSON.parse(sm) : MATCHES_DEFAULT.map(m => ({...m}));
+  data.tips.drazen = sd ? JSON.parse(sd) : {...TIPS_DRAZEN_DEFAULT};
+  data.tips.dinko  = sk ? JSON.parse(sk)  : {...TIPS_DINKO_DEFAULT};
+  if (!sm) saveData('matches');
+  if (!sd) saveData('tips_drazen');
+  if (!sk) saveData('tips_dinko');
+  renderMatches();
+  renderPlayer('drazen');
+  renderPlayer('dinko');
 }
 
 function switchTab(tab) {
   currentTab = tab;
-  ['drazen','dinko'].forEach(p => {
+  ['utakmice','drazen','dinko'].forEach(p => {
     document.getElementById('panel-'+p).style.display = p===tab ? '' : 'none';
     document.getElementById('tab-'+p).classList.toggle('active', p===tab);
   });
 }
 
-function render(player) {
-  const p  = player==='drazen' ? 'd' : 'k';
-  const matches = data[player];
-  const tbody = document.getElementById('tbody-'+player);
-  const empty  = document.getElementById('empty-'+player);
-
-  const results = matches.map(m=>({...m,...calcPoints(m)}));
-  const total   = results.reduce((s,r)=>s+r.pts,0);
-  const exact   = results.filter(r=>r.pts===3).length;
-  const diff    = results.filter(r=>r.pts===2).length;
-  const outcome = results.filter(r=>r.pts===1).length;
-  const zero    = results.filter(r=>r.pts===0).length;
-
-  document.getElementById(p+'-total').textContent   = total;
-  document.getElementById(p+'-exact').textContent   = exact;
-  document.getElementById(p+'-diff').textContent    = diff;
-  document.getElementById(p+'-outcome').textContent = outcome;
-  document.getElementById(p+'-matches').textContent = matches.length;
-  document.getElementById(p+'-zero').textContent = zero;
-  document.getElementById(p+'-exact-lbl').textContent   = 'Točan rezultat (3b)';
-  document.getElementById(p+'-diff-lbl').textContent    = 'Točna razlika (2b)';
-  document.getElementById(p+'-outcome-lbl').textContent = 'Točan ishod (1b)';
-  document.getElementById(p+'-exact').innerHTML   = `${exact}<span class="sub-pts">x (${exact*3}b)</span>`;
-  document.getElementById(p+'-diff').innerHTML    = `${diff}<span class="sub-pts">x (${diff*2}b)</span>`;
-  document.getElementById(p+'-outcome').innerHTML = `${outcome}<span class="sub-pts">x (${outcome}b)</span>`;
-
-  // update pills & leaderboard
-  document.getElementById('pill-'+player).textContent = total;
-  document.getElementById('lead-pts-'+player).textContent = total;
-  updateLeaderboard();
-
-  if (!matches.length) {
-    tbody.innerHTML=''; empty.style.display='block'; return;
-  }
-  empty.style.display='none';
-
-  tbody.innerHTML = results.map((m,i)=>{
-    const exact = m.pts===3;
+function renderMatches() {
+  const tbody = document.getElementById('tbody-utakmice');
+  const empty  = document.getElementById('empty-utakmice');
+  document.getElementById('pill-utakmice').textContent = data.matches.length;
+  if (!data.matches.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+  tbody.innerHTML = data.matches.map((m, i) => {
+    const hasRh = m.rh !== null && m.rh !== undefined;
+    const hasRa = m.ra !== null && m.ra !== undefined;
     return `<tr>
       <td style="color:#94a3b8;font-size:12px">${i+1}</td>
-      <td class="teams">${m.h} – ${m.a}${exact?'<span class="exact-tag">TOČAN ✓</span>':''}</td>
-      <td class="score">${m.ph}:${m.pa}</td>
-      <td class="score actual">${m.rh}:${m.ra}</td>
-      <td><span class="badge b${m.pts}">${m.pts}</span></td>
+      <td class="teams">${m.h} – ${m.a}</td>
+      <td>
+        <div class="score-cell">
+          <input type="number" class="score-in-sm" value="${hasRh ? m.rh : ''}"
+            onchange="updateResult(${m.id},'rh',this.value)" min="0" max="99" placeholder="–">
+          <span class="score-sep">:</span>
+          <input type="number" class="score-in-sm" value="${hasRa ? m.ra : ''}"
+            onchange="updateResult(${m.id},'ra',this.value)" min="0" max="99" placeholder="–">
+        </div>
+      </td>
+      <td><button class="del-btn" onclick="deleteMatch(${m.id})">✕</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function renderPlayer(player) {
+  const p = player === 'drazen' ? 'd' : 'k';
+  const tbody = document.getElementById('tbody-'+player);
+  const empty  = document.getElementById('empty-'+player);
+  if (!data.matches.length) { tbody.innerHTML = ''; empty.style.display = 'block'; return; }
+  empty.style.display = 'none';
+
+  const rows = data.matches.map(m => {
+    const tip  = data.tips[player][String(m.id)] || null;
+    const calc = calcPoints(m, tip);
+    return {...m, tip, ...calc};
+  });
+
+  const scored  = rows.filter(r => r.pts !== null);
+  const total   = scored.reduce((s,r) => s + r.pts, 0);
+  const exact   = scored.filter(r => r.pts===3).length;
+  const diff    = scored.filter(r => r.pts===2).length;
+  const outcome = scored.filter(r => r.pts===1).length;
+  const zero    = scored.filter(r => r.pts===0).length;
+
+  document.getElementById(p+'-total').textContent   = total;
+  document.getElementById(p+'-exact').innerHTML     = `${exact}<span class="sub-pts">x (${exact*3}b)</span>`;
+  document.getElementById(p+'-diff').innerHTML      = `${diff}<span class="sub-pts">x (${diff*2}b)</span>`;
+  document.getElementById(p+'-outcome').innerHTML   = `${outcome}<span class="sub-pts">x (${outcome}b)</span>`;
+  document.getElementById(p+'-zero').textContent    = zero;
+  document.getElementById(p+'-matches').textContent = data.matches.length;
+  document.getElementById('pill-'+player).textContent      = total;
+  document.getElementById('lead-pts-'+player).textContent  = total;
+  updateLeaderboard();
+
+  tbody.innerHTML = rows.map((m, i) => {
+    const hasTip = m.tip && m.tip.ph !== null && m.tip.ph !== undefined && m.tip.pa !== null && m.tip.pa !== undefined;
+    const hasResult = m.rh !== null && m.rh !== undefined && m.ra !== null && m.ra !== undefined;
+    const tipVal = hasTip ? `${m.tip.ph}:${m.tip.pa}` : '';
+    return `<tr>
+      <td style="color:#94a3b8;font-size:12px">${i+1}</td>
+      <td class="teams">${m.h} – ${m.a}${m.pts===3 ? '<span class="exact-tag">TOČAN ✓</span>' : ''}</td>
+      <td class="score"><input type="text" class="tip-input" value="${tipVal}"
+        onchange="updateTipText('${player}',${m.id},this.value)"
+        onkeydown="if(event.key==='Enter')this.blur()"
+        placeholder="–:–" maxlength="5"></td>
+      <td class="score actual">${hasResult ? m.rh+':'+m.ra : '<span style="color:#cbd5e1">–:–</span>'}</td>
+      <td>${m.pts !== null ? '<span class="badge b'+m.pts+'">'+m.pts+'</span>' : '<span style="color:#cbd5e1">–</span>'}</td>
       <td class="reason">${m.reason}</td>
-      <td><button class="del-btn" onclick="deleteMatch('${player}',${m.id})">✕</button></td>
     </tr>`;
   }).join('');
 }
 
 function updateLeaderboard() {
-  const dPts = +document.getElementById('d-total').textContent;
-  const kPts = +document.getElementById('k-total').textContent;
+  const dPts = +document.getElementById('lead-pts-drazen').textContent;
+  const kPts = +document.getElementById('lead-pts-dinko').textContent;
   const winner = document.getElementById('lead-winner');
-  const ldD = document.getElementById('lead-drazen');
-  const ldK = document.getElementById('lead-dinko');
-  ldD.style.fontWeight = dPts >= kPts ? '700' : '400';
-  ldK.style.fontWeight = kPts >= dPts ? '700' : '400';
+  document.getElementById('lead-drazen').style.fontWeight = dPts >= kPts ? '700' : '400';
+  document.getElementById('lead-dinko').style.fontWeight  = kPts >= dPts ? '700' : '400';
   if (dPts === kPts) winner.textContent = '🤝 Izjednačeno!';
   else if (dPts > kPts) winner.textContent = `🏆 Dražen vodi za ${dPts-kPts} bod${dPts-kPts===1?'':'ova'}`;
   else winner.textContent = `🏆 Dinko vodi za ${kPts-dPts} bod${kPts-dPts===1?'':'ova'}`;
 }
 
-function addMatch(player) {
-  const pre = player==='drazen' ? 'd' : 'k';
-  const h  = document.getElementById(pre+'h').value.trim();
-  const a  = document.getElementById(pre+'a').value.trim();
-  const ph = parseInt(document.getElementById(pre+'ph').value);
-  const pa = parseInt(document.getElementById(pre+'pa').value);
-  const rh = parseInt(document.getElementById(pre+'rh').value);
-  const ra = parseInt(document.getElementById(pre+'ra').value);
-  if (!h||!a) { alert('Upiši nazive momčadi.'); return; }
-  if ([ph,pa,rh,ra].some(isNaN)) { alert('Upiši sve rezultate.'); return; }
-  data[player].push({id:Date.now(),h,a,ph,pa,rh,ra});
-  save(player);
-  render(player);
-  [pre+'h',pre+'a',pre+'ph',pre+'pa',pre+'rh',pre+'ra'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById(pre+'h').focus();
+function addMatch() {
+  const h = document.getElementById('mh').value.trim();
+  const a = document.getElementById('ma').value.trim();
+  if (!h || !a) { alert('Upiši nazive momčadi.'); return; }
+  const rhVal = document.getElementById('mrh').value;
+  const raVal = document.getElementById('mra').value;
+  const rh = rhVal === '' ? null : parseInt(rhVal);
+  const ra = raVal === '' ? null : parseInt(raVal);
+  const id = Date.now();
+  data.matches.push({id, h, a, rh, ra});
+  saveData('matches');
+  renderMatches();
+  renderPlayer('drazen');
+  renderPlayer('dinko');
+  ['mh','ma','mrh','mra'].forEach(x => document.getElementById(x).value = '');
+  document.getElementById('mh').focus();
 }
 
-function deleteMatch(player, id) {
-  data[player] = data[player].filter(m=>m.id!==id);
-  save(player); render(player);
+function updateResult(id, field, value) {
+  const match = data.matches.find(m => m.id === id);
+  if (!match) return;
+  match[field] = value === '' ? null : parseInt(value);
+  saveData('matches');
+  renderMatches();
+  renderPlayer('drazen');
+  renderPlayer('dinko');
 }
 
-function clearAll(player) {
-  if (!confirm('Obrisati sve utakmice?')) return;
-  data[player]=[];
-  save(player); render(player);
+function updateTipText(player, id, value) {
+  const key = String(id);
+  const trimmed = value.trim();
+  if (!trimmed) {
+    data.tips[player][key] = {ph: null, pa: null};
+  } else {
+    const parts = trimmed.split(':');
+    if (parts.length !== 2) return;
+    const ph = parseInt(parts[0]), pa = parseInt(parts[1]);
+    if (isNaN(ph) || isNaN(pa) || ph < 0 || pa < 0) return;
+    if (!data.tips[player][key]) data.tips[player][key] = {};
+    data.tips[player][key] = {ph, pa};
+  }
+  saveData(player === 'drazen' ? 'tips_drazen' : 'tips_dinko');
+  renderPlayer(player);
 }
 
-function exportCSV(player) {
-  const name = player==='drazen'?'Dražen':'Dinko';
-  const results = data[player].map(m=>({...m,...calcPoints(m)}));
-  let csv=`#,Utakmica,${name} tip,Stvarni rezultat,Bodovi,Komentar\n`;
-  results.forEach((m,i)=>{
-    csv+=`${i+1},"${m.h} - ${m.a}","${m.ph}:${m.pa}","${m.rh}:${m.ra}",${m.pts},"${m.reason}"\n`;
+function deleteMatch(id) {
+  if (!confirm('Obrisati ovu utakmicu za oba igrača?')) return;
+  data.matches = data.matches.filter(m => m.id !== id);
+  delete data.tips.drazen[String(id)];
+  delete data.tips.dinko[String(id)];
+  saveData('all');
+  renderMatches();
+  renderPlayer('drazen');
+  renderPlayer('dinko');
+}
+
+function clearAllMatches() {
+  if (!confirm('Obrisati sve utakmice za oba igrača?')) return;
+  data.matches = [];
+  data.tips = { drazen: {}, dinko: {} };
+  saveData('all');
+  renderMatches();
+  renderPlayer('drazen');
+  renderPlayer('dinko');
+}
+
+function exportCSV() {
+  let csv = '#,Utakmica,Dražen tip,Dinko tip,Stvarni rezultat,Dražen bodovi,Dinko bodovi\n';
+  data.matches.forEach((m, i) => {
+    const dTip = data.tips.drazen[String(m.id)];
+    const kTip = data.tips.dinko[String(m.id)];
+    const dCalc = calcPoints(m, dTip);
+    const kCalc = calcPoints(m, kTip);
+    const dStr = dTip && dTip.ph !== null ? `${dTip.ph}:${dTip.pa}` : '–';
+    const kStr = kTip && kTip.ph !== null ? `${kTip.ph}:${kTip.pa}` : '–';
+    const rStr = m.rh !== null && m.rh !== undefined ? `${m.rh}:${m.ra}` : '–';
+    csv += `${i+1},"${m.h} – ${m.a}","${dStr}","${kStr}","${rStr}",${dCalc.pts ?? '–'},${kCalc.pts ?? '–'}\n`;
   });
-  csv+=`\nUkupno bodova:,${results.reduce((s,r)=>s+r.pts,0)}`;
-  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url; a.download=`tipping_${player}.csv`; a.click();
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'tipping_export.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// GitHub config
+const GH_OWNER  = 'drazenmcs-beep';
+const GH_REPO   = 'SP2026';
+const GH_FILE   = 'index.html';
+const GH_BRANCH = 'main';
+
+function generateNewHTML() {
+  function serializeMatches(matches) {
+    if (!matches.length) return '[]';
+    return '[\n' + matches.map(m =>
+      `  {id:${m.id},h:${JSON.stringify(m.h)},a:${JSON.stringify(m.a)},rh:${m.rh !== null && m.rh !== undefined ? m.rh : 'null'},ra:${m.ra !== null && m.ra !== undefined ? m.ra : 'null'}}`
+    ).join(',\n') + '\n]';
+  }
+  function serializeTips(tips) {
+    const entries = Object.entries(tips);
+    if (!entries.length) return '{}';
+    return '{\n' + entries.map(([id, t]) =>
+      `  ${JSON.stringify(id)}:{ph:${t.ph !== null && t.ph !== undefined ? t.ph : 'null'},pa:${t.pa !== null && t.pa !== undefined ? t.pa : 'null'}}`
+    ).join(',\n') + '\n}';
+  }
+  let out = document.documentElement.outerHTML;
+  out = out.replace(/\/\*MATCHES_START\*\/[\s\S]*?\/\*MATCHES_END\*\//,
+    `/*MATCHES_START*/${serializeMatches(data.matches)}/*MATCHES_END*/`);
+  out = out.replace(/\/\*TIPS_DRAZEN_START\*\/[\s\S]*?\/\*TIPS_DRAZEN_END\*\//,
+    `/*TIPS_DRAZEN_START*/${serializeTips(data.tips.drazen)}/*TIPS_DRAZEN_END*/`);
+  out = out.replace(/\/\*TIPS_DINKO_START\*\/[\s\S]*?\/\*TIPS_DINKO_END\*\//,
+    `/*TIPS_DINKO_START*/${serializeTips(data.tips.dinko)}/*TIPS_DINKO_END*/`);
+  return out;
 }
 
 function saveAsHTML() {
-  const src = document.documentElement.outerHTML;
-
-  function serializeMatches(matches) {
-    return '[\n' + matches.map(m =>
-      `  {h:${JSON.stringify(m.h)},a:${JSON.stringify(m.a)},ph:${m.ph},pa:${m.pa},rh:${m.rh},ra:${m.ra}}`
-    ).join(',\n') + '\n]';
-  }
-
-  let out = src;
-  out = out.replace(/\/\*DRAZEN_START\*\/[\s\S]*?\/\*DRAZEN_END\*\//,
-    `/*DRAZEN_START*/${serializeMatches(data.drazen)}/*DRAZEN_END*/`);
-  out = out.replace(/\/\*DINKO_START\*\/[\s\S]*?\/\*DINKO_END\*\//,
-    `/*DINKO_START*/${serializeMatches(data.dinko)}/*DINKO_END*/`);
-
-  const blob = new Blob([out], {type:'text/html;charset=utf-8;'});
+  const html = generateNewHTML();
+  const blob = new Blob([html], {type:'text/html;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url; a.download = 'index.html'; a.click();
   URL.revokeObjectURL(url);
-
   const btn = document.getElementById('save-btn');
-  btn.textContent = '✓ Spremljeno!';
-  btn.style.background = '#dcfce7';
-  btn.style.color = '#15803d';
-  setTimeout(() => { btn.textContent = '💾 Spremi datoteku'; btn.style.background=''; btn.style.color=''; }, 2500);
+  const orig = btn.textContent;
+  btn.textContent = '✓ Preuzeto!';
+  btn.style.background = '#dcfce7'; btn.style.color = '#15803d';
+  setTimeout(() => { btn.textContent = orig; btn.style.background=''; btn.style.color=''; }, 2000);
 }
 
-document.addEventListener('keydown', e=>{
-  const ids = currentTab==='drazen'
-    ? ['dh','da','dph','dpa','drh','dra']
-    : ['kh','ka','kph','kpa','krh','kra'];
-  if (e.key==='Enter' && ids.includes(e.target.id)) addMatch(currentTab);
+async function saveToGitHub() {
+  const btn = document.getElementById('gh-save-btn');
+  let token = localStorage.getItem('gh_pat');
+  if (!token) {
+    token = prompt('Upiši GitHub Personal Access Token\n(pohranit će se samo u ovom browseru, ne u HTML datoteci):');
+    if (!token) return;
+    localStorage.setItem('gh_pat', token.trim());
+    token = token.trim();
+  }
+  const origText = btn.textContent;
+  btn.textContent = '⏳ Sprema...';
+  btn.disabled = true;
+  try {
+    // Dohvati SHA trenutne datoteke
+    const getRes = await fetch(
+      `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}?ref=${GH_BRANCH}`,
+      { headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' } }
+    );
+    if (!getRes.ok) {
+      if (getRes.status === 401) { localStorage.removeItem('gh_pat'); throw new Error('Pogrešan token. Klikni ponovo i upiši ispravan.'); }
+      throw new Error(`GitHub greška ${getRes.status}`);
+    }
+    const { sha } = await getRes.json();
+    // Enkodiranje u base64 (UTF-8 sigurno)
+    const html = generateNewHTML();
+    const b64 = btoa(unescape(encodeURIComponent(html)));
+    // Objavi na GitHub
+    const putRes = await fetch(
+      `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`,
+      {
+        method: 'PUT',
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: 'Ažurirani rezultati — ' + new Date().toLocaleDateString('hr'),
+          content: b64, sha, branch: GH_BRANCH
+        })
+      }
+    );
+    if (!putRes.ok) {
+      const err = await putRes.json();
+      throw new Error(err.message || `GitHub greška ${putRes.status}`);
+    }
+    btn.textContent = '✓ Objavljeno!';
+    btn.style.background = '#dcfce7'; btn.style.color = '#15803d';
+    setTimeout(() => { btn.textContent = origText; btn.style.background=''; btn.style.color=''; btn.disabled=false; }, 3000);
+  } catch(err) {
+    alert('Greška: ' + err.message);
+    btn.textContent = origText; btn.style.background=''; btn.style.color=''; btn.disabled=false;
+  }
+}
+
+function resetGHToken() {
+  if (confirm('Obrisati spremljeni GitHub token?')) {
+    localStorage.removeItem('gh_pat');
+    alert('Token obrisan. Sljedeći put će tražiti novi.');
+  }
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && ['mh','ma','mrh','mra'].includes(e.target.id)) addMatch();
 });
 
 load();
 </script>
+
 <footer style="background:#fff;border-top:1px solid #e2e8f0;padding:20px 24px;margin-top:8px;">
   <div style="max-width:700px;">
     <h3 style="font-size:13px;font-weight:700;color:#374151;margin-bottom:10px;">📋 Pravila bodovanja</h3>
@@ -1186,6 +907,5 @@ load();
     </div>
   </div>
 </footer>
-
-
-</body></html>
+</body>
+</html>
