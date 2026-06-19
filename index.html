@@ -752,6 +752,42 @@ function exportCSV() {
 }
 
 
+let _pendingGitHubSave = false;
+
+function openTokenModal() {
+  document.getElementById('token-modal-input').value = '';
+  document.getElementById('token-modal-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('token-modal-input').focus(), 100);
+}
+function closeTokenModal() {
+  document.getElementById('token-modal-overlay').classList.remove('open');
+  _pendingGitHubSave = false;
+  const btn = document.getElementById('gh-save-btn');
+  btn.textContent = '☁️ Spremi na GitHub';
+  btn.disabled = false;
+}
+function confirmToken() {
+  const val = document.getElementById('token-modal-input').value.trim().replace(/[\r\n\s]/g, '');
+  if (!val) { document.getElementById('token-modal-input').focus(); return; }
+  localStorage.setItem('gh_pat', val);
+  document.getElementById('token-modal-overlay').classList.remove('open');
+  if (_pendingGitHubSave) { _pendingGitHubSave = false; doGitHubSave(val); }
+}
+
+async function saveToGitHub() {
+  const btn = document.getElementById('gh-save-btn');
+  let token = localStorage.getItem('gh_pat');
+  if (token) token = token.trim().replace(/[\r\n\s]/g, '');
+  if (!token) {
+    _pendingGitHubSave = true;
+    btn.textContent = '⏳ Čeka token...';
+    btn.disabled = true;
+    openTokenModal();
+    return;
+  }
+  doGitHubSave(token);
+}
+
 async function doGitHubSave(token) {
   const btn = document.getElementById('gh-save-btn');
   const origText = '☁️ Spremi na GitHub';
@@ -839,4 +875,3 @@ document.addEventListener('keydown', e => {
   </div>
 </footer>
 </body>
-</html>
