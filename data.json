@@ -5,252 +5,288 @@
       "h": "Meksiko",
       "a": "JAR",
       "rh": 2,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537327
     },
     {
       "id": 2,
       "h": "Južna Koreja",
       "a": "Češka",
       "rh": 2,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537328
     },
     {
       "id": 3,
       "h": "Kanada",
       "a": "BiH",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537333
     },
     {
       "id": 4,
       "h": "SAD",
       "a": "Paragvaj",
       "rh": 4,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537345
     },
     {
       "id": 5,
       "h": "Katar",
       "a": "Švicarska",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537334
     },
     {
       "id": 6,
       "h": "Brazil",
       "a": "Maroko",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537339
     },
     {
       "id": 7,
       "h": "Haiti",
       "a": "Škotska",
       "rh": 0,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537340
     },
     {
       "id": 8,
       "h": "Australija",
       "a": "Turska",
       "rh": 2,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537346
     },
     {
       "id": 9,
       "h": "Njemačka",
       "a": "Curacao",
       "rh": 7,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537351
     },
     {
       "id": 10,
       "h": "Nizozemska",
       "a": "Japan",
       "rh": 2,
-      "ra": 2
+      "ra": 2,
+      "fdid": 537357
     },
     {
       "id": 11,
       "h": "Obala Bjelokosti",
       "a": "Ekvador",
       "rh": 1,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537352
     },
     {
       "id": 12,
       "h": "Švedska",
       "a": "Tunis",
       "rh": 5,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537358
     },
     {
       "id": 13,
       "h": "Španjolska",
       "a": "Zelenortska Rep.",
       "rh": 0,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537369
     },
     {
       "id": 14,
       "h": "Belgija",
       "a": "Egipat",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537363
     },
     {
       "id": 15,
       "h": "Saudijska Arabija",
       "a": "Urugvaj",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537370
     },
     {
       "id": 16,
       "h": "Iran",
       "a": "Novi Zeland",
       "rh": 2,
-      "ra": 2
+      "ra": 2,
+      "fdid": 537364
     },
     {
       "id": 17,
       "h": "Francuska",
       "a": "Senegal",
       "rh": 3,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537391
     },
     {
       "id": 18,
       "h": "Irak",
       "a": "Norveška",
       "rh": 1,
-      "ra": 4
+      "ra": 4,
+      "fdid": 537392
     },
     {
       "id": 19,
       "h": "Argentina",
       "a": "Alžir",
       "rh": 3,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537397
     },
     {
       "id": 20,
       "h": "Austrija",
       "a": "Jordan",
       "rh": 3,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537398
     },
     {
       "id": 21,
       "h": "Portugal",
       "a": "DR Kongo",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537403
     },
     {
       "id": 22,
       "h": "Engleska",
       "a": "Hrvatska",
       "rh": 4,
-      "ra": 2
+      "ra": 2,
+      "fdid": 537409
     },
     {
       "id": 23,
       "h": "Gana",
       "a": "Panama",
       "rh": 1,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537410
     },
     {
       "id": 24,
       "h": "Uzbekistan",
       "a": "Kolumbija",
       "rh": 1,
-      "ra": 3
+      "ra": 3,
+      "fdid": 537404
     },
     {
       "id": 1781866353119,
       "h": "Češka",
       "a": "JAR",
       "rh": 1,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537329
     },
     {
       "id": 1781866360641,
       "h": "Švicarska",
       "a": "BiH",
       "rh": 4,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537335
     },
     {
       "id": 1781866366357,
       "h": "Kanada",
       "a": "Katar",
       "rh": 6,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537336
     },
     {
       "id": 1781866374577,
       "h": "Meksiko",
       "a": "Južna Koreja",
       "rh": 1,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537330
     },
     {
       "id": 1781867465967,
       "h": "SAD",
       "a": "Australija",
       "rh": 2,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537348
     },
     {
       "id": 1781867476573,
       "h": "Škotska",
       "a": "Maroko",
       "rh": 0,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537342
     },
     {
       "id": 1781867483607,
       "h": "Brazil",
       "a": "Haiti",
       "rh": 3,
-      "ra": 0
+      "ra": 0,
+      "fdid": 537341
     },
     {
       "id": 1781867490053,
       "h": "Turska",
       "a": "Paragvaj",
       "rh": 0,
-      "ra": 1
+      "ra": 1,
+      "fdid": 537347
     },
     {
       "id": 1781942988048,
       "h": "Nizozemska",
       "a": "Švedska",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": 537359
     },
     {
       "id": 1781943012656,
       "h": "Njemačka",
       "a": "Obala Bjelokosti",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": 537353
     },
     {
       "id": 1781943030766,
       "h": "Ekvador",
       "a": "Curacao",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": 537354
     },
     {
       "id": 1781943039592,
       "h": "Tunis",
       "a": "Japan",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": 537360
     }
   ],
   "tips": {
