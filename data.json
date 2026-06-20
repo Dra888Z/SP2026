@@ -252,8 +252,8 @@
       "id": 1781867490053,
       "h": "Turska",
       "a": "Paragvaj",
-      "rh": 0,
-      "ra": 1,
+      "rh": null,
+      "ra": null,
       "fdid": 537347
     },
     {
@@ -845,6 +845,6 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-20T13:32:04.000+02:00"
+    "lastChecked": "2026-06-20T11:05:13.000Z"
   }
 }
