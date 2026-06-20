@@ -1049,13 +1049,51 @@ function startCountdown() {
   if (_countdownTimer) clearInterval(_countdownTimer);
   const el = document.getElementById('countdown-timer');
   if (!el) return;
+  let _autoRefreshing = false;
   const tick = () => {
     const mins = data.settings?.checkIntervalMinutes ?? 20;
     const last = data.settings?.lastChecked ? new Date(data.settings.lastChecked) : null;
-    if (!mins) { el.textContent = 'Isključeno'; el.className = 'countdown-timer off'; return; }
+    if (!mins) { el.textContent = 'Isključeno'; el.className = 'countdown-timer off'; _autoRefreshing = false; return; }
     if (!last) { el.textContent = 'Čeka...'; el.className = 'countdown-timer off'; return; }
     const nextCheck = new Date(last.getTime() + mins * 60000);
     const rem = Math.max(0, nextCheck - Date.now());
+    if (rem === 0) {
+      el.textContent = '0:00';
+      el.style.color = '#f59e0b';
+      // Auto-refresh: dohvati novi data.json svakih 30s dok se ne ažurira lastChecked
+      if (!_autoRefreshing) {
+        _autoRefreshing = true;
+        const pollGH = async () => {
+          if (!_autoRefreshing) return;
+          try {
+            const res = await fetch(
+              `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_DATA_FILE}?ref=${GH_BRANCH}&_=${Date.now()}`,
+              { cache: 'no-store', headers: { 'Accept': 'application/vnd.github.raw+json' } }
+            );
+            if (res.ok) {
+              const fresh = await res.json();
+              const newLast = fresh?.settings?.lastChecked;
+              if (newLast && newLast !== data.settings?.lastChecked) {
+                // Novi lastChecked — ažuriraj i resetiraj
+                data = fresh;
+                saveLocalCache();
+                renderMatches();
+                PLAYERS.forEach(p => renderPlayer(p));
+                updateLeaderboard();
+                applyAccessLevel();
+                _autoRefreshing = false;
+                startCountdown();
+                return;
+              }
+            }
+          } catch(e) {}
+          if (_autoRefreshing) setTimeout(pollGH, 30000);
+        };
+        setTimeout(pollGH, 30000);
+      }
+      return;
+    }
+    _autoRefreshing = false;
     const m = Math.floor(rem / 60000);
     const s = Math.floor((rem % 60000) / 1000);
     el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
