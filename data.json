@@ -287,6 +287,70 @@
       "rh": null,
       "ra": null,
       "fdid": 537360
+    },
+    {
+      "id": 1781987325460,
+      "h": "Španjolska",
+      "a": "Saudijska Arabija",
+      "rh": null,
+      "ra": null,
+      "fdid": "537371"
+    },
+    {
+      "id": 1781987338640,
+      "h": "Belgija",
+      "a": "Iran",
+      "rh": null,
+      "ra": null,
+      "fdid": "537365"
+    },
+    {
+      "id": 1781987364945,
+      "h": "Urugvaj",
+      "a": "Zelenortska Rep",
+      "rh": null,
+      "ra": null,
+      "fdid": "537372"
+    },
+    {
+      "id": 1781987397417,
+      "h": "Novi Zeland",
+      "a": "Egipat",
+      "rh": null,
+      "ra": null,
+      "fdid": "537366"
+    },
+    {
+      "id": 1781987408744,
+      "h": "Argentina",
+      "a": "Austrija",
+      "rh": null,
+      "ra": null,
+      "fdid": "537399"
+    },
+    {
+      "id": 1781987417340,
+      "h": "Francuska",
+      "a": "Irak",
+      "rh": null,
+      "ra": null,
+      "fdid": "537393"
+    },
+    {
+      "id": 1781987431974,
+      "h": "Norveška",
+      "a": "Senegal",
+      "rh": null,
+      "ra": null,
+      "fdid": "537394"
+    },
+    {
+      "id": 1781987442761,
+      "h": "Jordan",
+      "a": "Alžir",
+      "rh": null,
+      "ra": null,
+      "fdid": "537400"
     }
   ],
   "tips": {
@@ -877,6 +941,6 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-20T22:30:38.000+02:00"
+    "lastChecked": "2026-06-20T22:15:25.000+02:00"
   }
 }
