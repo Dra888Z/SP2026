@@ -6,7 +6,7 @@
       "a": "JAR",
       "rh": 2,
       "ra": 0,
-      "fdid": 537327
+      "fdid": null
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "a": "Češka",
       "rh": 2,
       "ra": 1,
-      "fdid": 537328
+      "fdid": null
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "a": "BiH",
       "rh": 1,
       "ra": 1,
-      "fdid": 537333
+      "fdid": null
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "a": "Paragvaj",
       "rh": 4,
       "ra": 1,
-      "fdid": 537345
+      "fdid": null
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "a": "Švicarska",
       "rh": 1,
       "ra": 1,
-      "fdid": 537334
+      "fdid": null
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "a": "Maroko",
       "rh": 1,
       "ra": 1,
-      "fdid": 537339
+      "fdid": null
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "a": "Škotska",
       "rh": 0,
       "ra": 1,
-      "fdid": 537340
+      "fdid": null
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "a": "Turska",
       "rh": 2,
       "ra": 0,
-      "fdid": 537346
+      "fdid": null
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "a": "Curacao",
       "rh": 7,
       "ra": 1,
-      "fdid": 537351
+      "fdid": null
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "a": "Japan",
       "rh": 2,
       "ra": 2,
-      "fdid": 537357
+      "fdid": null
     },
     {
       "id": 11,
@@ -86,7 +86,7 @@
       "a": "Ekvador",
       "rh": 1,
       "ra": 0,
-      "fdid": 537352
+      "fdid": null
     },
     {
       "id": 12,
@@ -94,7 +94,7 @@
       "a": "Tunis",
       "rh": 5,
       "ra": 1,
-      "fdid": 537358
+      "fdid": null
     },
     {
       "id": 13,
@@ -102,7 +102,7 @@
       "a": "Zelenortska Rep.",
       "rh": 0,
       "ra": 0,
-      "fdid": 537369
+      "fdid": null
     },
     {
       "id": 14,
@@ -110,7 +110,7 @@
       "a": "Egipat",
       "rh": 1,
       "ra": 1,
-      "fdid": 537363
+      "fdid": null
     },
     {
       "id": 15,
@@ -118,7 +118,7 @@
       "a": "Urugvaj",
       "rh": 1,
       "ra": 1,
-      "fdid": 537370
+      "fdid": null
     },
     {
       "id": 16,
@@ -126,7 +126,7 @@
       "a": "Novi Zeland",
       "rh": 2,
       "ra": 2,
-      "fdid": 537364
+      "fdid": null
     },
     {
       "id": 17,
@@ -134,7 +134,7 @@
       "a": "Senegal",
       "rh": 3,
       "ra": 1,
-      "fdid": 537391
+      "fdid": null
     },
     {
       "id": 18,
@@ -142,7 +142,7 @@
       "a": "Norveška",
       "rh": 1,
       "ra": 4,
-      "fdid": 537392
+      "fdid": null
     },
     {
       "id": 19,
@@ -150,7 +150,7 @@
       "a": "Alžir",
       "rh": 3,
       "ra": 0,
-      "fdid": 537397
+      "fdid": null
     },
     {
       "id": 20,
@@ -158,7 +158,7 @@
       "a": "Jordan",
       "rh": 3,
       "ra": 1,
-      "fdid": 537398
+      "fdid": null
     },
     {
       "id": 21,
@@ -166,7 +166,7 @@
       "a": "DR Kongo",
       "rh": 1,
       "ra": 1,
-      "fdid": 537403
+      "fdid": null
     },
     {
       "id": 22,
@@ -174,7 +174,7 @@
       "a": "Hrvatska",
       "rh": 4,
       "ra": 2,
-      "fdid": 537409
+      "fdid": null
     },
     {
       "id": 23,
@@ -182,7 +182,7 @@
       "a": "Panama",
       "rh": 1,
       "ra": 0,
-      "fdid": 537410
+      "fdid": null
     },
     {
       "id": 24,
@@ -190,7 +190,7 @@
       "a": "Kolumbija",
       "rh": 1,
       "ra": 3,
-      "fdid": 537404
+      "fdid": null
     },
     {
       "id": 1781866353119,
@@ -198,7 +198,7 @@
       "a": "JAR",
       "rh": 1,
       "ra": 1,
-      "fdid": 537329
+      "fdid": null
     },
     {
       "id": 1781866360641,
@@ -206,7 +206,7 @@
       "a": "BiH",
       "rh": 4,
       "ra": 1,
-      "fdid": 537335
+      "fdid": null
     },
     {
       "id": 1781866366357,
@@ -214,7 +214,7 @@
       "a": "Katar",
       "rh": 6,
       "ra": 0,
-      "fdid": 537336
+      "fdid": null
     },
     {
       "id": 1781866374577,
@@ -222,7 +222,7 @@
       "a": "Južna Koreja",
       "rh": 1,
       "ra": 0,
-      "fdid": 537330
+      "fdid": null
     },
     {
       "id": 1781867465967,
@@ -230,7 +230,7 @@
       "a": "Australija",
       "rh": 2,
       "ra": 0,
-      "fdid": 537348
+      "fdid": null
     },
     {
       "id": 1781867476573,
@@ -238,7 +238,7 @@
       "a": "Maroko",
       "rh": 0,
       "ra": 1,
-      "fdid": 537342
+      "fdid": null
     },
     {
       "id": 1781867483607,
@@ -246,7 +246,7 @@
       "a": "Haiti",
       "rh": 3,
       "ra": 0,
-      "fdid": 537341
+      "fdid": null
     },
     {
       "id": 1781867490053,
