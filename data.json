@@ -292,8 +292,8 @@
       "id": 1781987325460,
       "h": "Španjolska",
       "a": "Saudijska Arabija",
-      "rh": null,
-      "ra": null,
+      "rh": 5,
+      "ra": 0,
       "fdid": "537371"
     },
     {
@@ -1229,7 +1229,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-21T20:00:48.000+02:00"
+    "lastChecked": "2026-06-21T20:15:24.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
