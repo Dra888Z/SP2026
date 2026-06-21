@@ -298,9 +298,27 @@
   /* Bonus igre */
   .bonus-section {
     background: #fff; border: 1px solid #e2e8f0; border-radius: 10px;
-    padding: 18px 20px; margin-bottom: 16px;
+    padding: 0; margin-bottom: 16px;
     box-shadow: 0 1px 3px rgba(0,0,0,.04);
+    overflow: hidden;
   }
+  .bonus-toggle-header {
+    display: flex; align-items: center; gap: 10px; padding: 14px 20px;
+    cursor: pointer; user-select: none;
+    transition: background .15s;
+  }
+  .bonus-toggle-header:hover { background: #f8fafc; }
+  .bonus-toggle-btn {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: #ede9fe; color: #6d28d9; border: none;
+    font-size: 16px; font-weight: 700; line-height: 1;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; flex-shrink: 0; transition: transform .2s;
+    pointer-events: none;
+  }
+  .bonus-toggle-header h2 { font-size: 14px; font-weight: 700; margin: 0; color: #374151; flex: 1; }
+  .bonus-body { padding: 0 20px 18px 20px; }
+  .bonus-body.hidden { display: none; }
   .bonus-section h2 { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: #374151; }
   .bonus-game { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f1f5f9; }
   .bonus-game:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -329,7 +347,7 @@
   .is-readonly .tip-input,
   .is-readonly .fdid-input,
   .is-readonly .bonus-input { pointer-events: none; opacity: .6; }
-  .is-readonly .bonus-admin-section { display: none !important; }
+  /* .is-readonly .bonus-admin-section vidljiv je svima, ali inputi su disabled */
 
   /* Token modal */
   #token-modal-overlay {
@@ -736,6 +754,8 @@ function applyAccessLevel() {
     document.querySelectorAll('.score-in-sm').forEach(el => el.disabled = true);
     document.querySelectorAll('.del-btn').forEach(el => el.style.display = 'none');
     document.querySelectorAll('.tip-input').forEach(el => el.disabled = true);
+    // Bonus igre — onemogući sve bonus inpute (admin sekcija ostaje vidljiva ali readonly)
+    document.querySelectorAll('.bonus-input').forEach(el => el.disabled = true);
   }
 }
 
@@ -1147,10 +1167,20 @@ function calcBonusPoints(player) {
   return { total, details };
 }
 
+function toggleBonus(id) {
+  const body = document.getElementById(id + '-body');
+  const btn = document.getElementById(id + '-btn');
+  if (!body || !btn) return;
+  const open = !body.classList.contains('hidden');
+  body.classList.toggle('hidden', open);
+  btn.textContent = open ? '+' : '−';
+}
+
 function renderBonusAdmin() {
   const div = document.getElementById('bonus-admin-section');
   if (!div) return;
   const bg = data.bonusGames || {};
+  const wasOpen = div.querySelector('#bonus-admin-body') && !div.querySelector('#bonus-admin-body').classList.contains('hidden');
 
   let gwHTML = '<div class="groups-grid">';
   GROUPS.forEach(g => {
@@ -1182,29 +1212,36 @@ function renderBonusAdmin() {
   }
   zpHTML += '</div><div style="font-size:11px;color:#94a3b8;margin-top:6px;">Ostavi sve prazno ako nijedna momčad nema 0 bodova — nitko ne dobiva bod.</div>';
 
+  const bodyHidden = wasOpen ? '' : 'hidden';
+  const btnLabel = wasOpen ? '−' : '+';
   div.innerHTML = `
-    <h2>🎮 Bonus igre — postavljanje rezultata</h2>
-    <div class="bonus-game">
-      <h3>1. Pobjednici skupina — upiši koje 2 momčadi prolaze iz svake grupe</h3>
-      ${gwHTML}
+    <div class="bonus-toggle-header" onclick="toggleBonus('bonus-admin')">
+      <button class="bonus-toggle-btn" id="bonus-admin-btn">${btnLabel}</button>
+      <h2>🎮 Bonus igre — postavljanje rezultata</h2>
     </div>
-    <div class="bonus-game">
-      <h3>2. Svjetski prvak</h3>
-      <input type="text" class="bonus-input" style="width:200px" placeholder="Osvajač naslova" value="${(bg.champion||'').replace(/"/g,'&quot;')}"
-        onchange="updateBonusAdmin('champion',null,null,this.value)">
-    </div>
-    <div class="bonus-game">
-      <h3>3. Najbolji strijelac</h3>
-      <input type="text" class="bonus-input" style="width:200px" placeholder="Ime i prezime" value="${(bg.topScorer||'').replace(/"/g,'&quot;')}"
-        onchange="updateBonusAdmin('topScorer',null,null,this.value)">
-    </div>
-    <div class="bonus-game">
-      <h3>4. Momčad(i) s najviše golova u grupi — dodaj više u slučaju izjednačenja</h3>
-      ${mgHTML}
-    </div>
-    <div class="bonus-game">
-      <h3>5. Momčad(i) s 0 bodova u grupi — max 10</h3>
-      ${zpHTML}
+    <div class="bonus-body ${bodyHidden}" id="bonus-admin-body">
+      <div class="bonus-game">
+        <h3>1. Pobjednici skupina — upiši koje 2 momčadi prolaze iz svake grupe</h3>
+        ${gwHTML}
+      </div>
+      <div class="bonus-game">
+        <h3>2. Svjetski prvak</h3>
+        <input type="text" class="bonus-input" style="width:200px" placeholder="Osvajač naslova" value="${(bg.champion||'').replace(/"/g,'&quot;')}"
+          onchange="updateBonusAdmin('champion',null,null,this.value)">
+      </div>
+      <div class="bonus-game">
+        <h3>3. Najbolji strijelac</h3>
+        <input type="text" class="bonus-input" style="width:200px" placeholder="Ime i prezime" value="${(bg.topScorer||'').replace(/"/g,'&quot;')}"
+          onchange="updateBonusAdmin('topScorer',null,null,this.value)">
+      </div>
+      <div class="bonus-game">
+        <h3>4. Momčad(i) s najviše golova u grupi — dodaj više u slučaju izjednačenja</h3>
+        ${mgHTML}
+      </div>
+      <div class="bonus-game">
+        <h3>5. Momčad(i) s 0 bodova u grupi — max 10</h3>
+        ${zpHTML}
+      </div>
     </div>
   `;
 }
@@ -1216,6 +1253,8 @@ function renderBonusPlayer(player) {
   const bonus = calcBonusPoints(player);
   const ro = isReadonly();
   const dis = ro ? 'disabled' : '';
+  const bodyId = 'bonus-' + player + '-body';
+  const wasOpen = div.querySelector('#' + bodyId) && !div.querySelector('#' + bodyId).classList.contains('hidden');
 
   function icon(hit, pts) {
     if (hit === null) return '<span style="color:#cbd5e1;font-size:12px;font-weight:600">–</span>';
@@ -1239,45 +1278,50 @@ function renderBonusPlayer(player) {
   });
   gwHTML += '</div>';
 
+  const bodyHidden = wasOpen ? '' : 'hidden';
+  const btnLabel = wasOpen ? '−' : '+';
   div.innerHTML = `
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-      <h2 style="margin:0;font-size:14px;font-weight:700;color:#374151;">🎮 Bonus igre</h2>
+    <div class="bonus-toggle-header" onclick="toggleBonus('bonus-${player}')">
+      <button class="bonus-toggle-btn" id="bonus-${player}-btn">${btnLabel}</button>
+      <h2>🎮 Bonus igre</h2>
       <span class="bonus-pts-badge">+${bonus.total} bonus bodova</span>
     </div>
-    <div class="bonus-game">
-      <h3>1. Pobjednici skupina &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">${bonus.details.groupPts}/12 skupina pogođeno (+${bonus.details.groupPts} bod.)</span></h3>
-      ${gwHTML}
-    </div>
-    <div class="bonus-game">
-      <h3>2. Svjetski prvak &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">15 bodova</span></h3>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.champion||'').replace(/"/g,'&quot;')}"
-          onchange="updateBonusPlayer('${player}','champion',null,null,this.value)" ${dis}>
-        ${icon(bonus.details.champion, 15)}
+    <div class="bonus-body ${bodyHidden}" id="bonus-${player}-body">
+      <div class="bonus-game">
+        <h3>1. Pobjednici skupina &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">${bonus.details.groupPts}/12 skupina pogođeno (+${bonus.details.groupPts} bod.)</span></h3>
+        ${gwHTML}
       </div>
-    </div>
-    <div class="bonus-game">
-      <h3>3. Najbolji strijelac &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">15 bodova</span></h3>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <input type="text" class="bonus-input" style="width:200px" placeholder="Ime i prezime" value="${(pbg.topScorer||'').replace(/"/g,'&quot;')}"
-          onchange="updateBonusPlayer('${player}','topScorer',null,null,this.value)" ${dis}>
-        ${icon(bonus.details.topScorer, 15)}
+      <div class="bonus-game">
+        <h3>2. Svjetski prvak &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">15 bodova</span></h3>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.champion||'').replace(/"/g,'&quot;')}"
+            onchange="updateBonusPlayer('${player}','champion',null,null,this.value)" ${dis}>
+          ${icon(bonus.details.champion, 15)}
+        </div>
       </div>
-    </div>
-    <div class="bonus-game">
-      <h3>4. Momčad s najviše golova u grupi &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">5 bodova</span></h3>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.mostGoals||'').replace(/"/g,'&quot;')}"
-          onchange="updateBonusPlayer('${player}','mostGoals',null,null,this.value)" ${dis}>
-        ${icon(bonus.details.mostGoals, 5)}
+      <div class="bonus-game">
+        <h3>3. Najbolji strijelac &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">15 bodova</span></h3>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <input type="text" class="bonus-input" style="width:200px" placeholder="Ime i prezime" value="${(pbg.topScorer||'').replace(/"/g,'&quot;')}"
+            onchange="updateBonusPlayer('${player}','topScorer',null,null,this.value)" ${dis}>
+          ${icon(bonus.details.topScorer, 15)}
+        </div>
       </div>
-    </div>
-    <div class="bonus-game">
-      <h3>5. Momčad s 0 bodova u grupi &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">5 bodova</span></h3>
-      <div style="display:flex;align-items:center;gap:8px;">
-        <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.zeroPoints||'').replace(/"/g,'&quot;')}"
-          onchange="updateBonusPlayer('${player}','zeroPoints',null,null,this.value)" ${dis}>
-        ${icon(bonus.details.zeroPoints, 5)}
+      <div class="bonus-game">
+        <h3>4. Momčad s najviše golova u grupi &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">5 bodova</span></h3>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.mostGoals||'').replace(/"/g,'&quot;')}"
+            onchange="updateBonusPlayer('${player}','mostGoals',null,null,this.value)" ${dis}>
+          ${icon(bonus.details.mostGoals, 5)}
+        </div>
+      </div>
+      <div class="bonus-game">
+        <h3>5. Momčad s 0 bodova u grupi &nbsp;<span style="font-weight:400;text-transform:none;color:#94a3b8">5 bodova</span></h3>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <input type="text" class="bonus-input" style="width:200px" placeholder="Upiši momčad" value="${(pbg.zeroPoints||'').replace(/"/g,'&quot;')}"
+            onchange="updateBonusPlayer('${player}','zeroPoints',null,null,this.value)" ${dis}>
+          ${icon(bonus.details.zeroPoints, 5)}
+        </div>
       </div>
     </div>
   `;
