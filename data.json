@@ -357,70 +357,80 @@
       "h": "Portugal",
       "a": "Uzbekistan",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537405"
     },
     {
       "id": 1782163633236,
       "h": "Engleska",
       "a": "Gana",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537411"
     },
     {
       "id": 1782163641573,
       "h": "Panama",
       "a": "Hrvatska",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537412"
     },
     {
       "id": 1782163652521,
       "h": "Kolumbija",
       "a": "DR Kongo",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537406"
     },
     {
       "id": 1782163659581,
       "h": "BiH",
       "a": "Katar",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537338"
     },
     {
       "id": 1782163664874,
       "h": "Švicarska",
       "a": "Kanada",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537337"
     },
     {
       "id": 1782163675076,
       "h": "Maroko",
       "a": "Haiti",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537344"
     },
     {
       "id": 1782163680762,
       "h": "Škotska",
       "a": "Brazil",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537343"
     },
     {
       "id": 1782163688261,
       "h": "Češka",
       "a": "Meksiko",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537331"
     },
     {
       "id": 1782163699500,
       "h": "Južna Afrika",
       "a": "Južna Koreja",
       "rh": null,
-      "ra": null
+      "ra": null,
+      "fdid": "537332"
     }
   ],
   "tips": {
