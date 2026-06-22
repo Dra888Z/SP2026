@@ -316,8 +316,8 @@
       "id": 1781987397417,
       "h": "Novi Zeland",
       "a": "Egipat",
-      "rh": null,
-      "ra": null,
+      "rh": 1,
+      "ra": 3,
       "fdid": "537366"
     },
     {
@@ -1229,7 +1229,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-22T05:00:48.000+02:00"
+    "lastChecked": "2026-06-22T05:15:24.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
