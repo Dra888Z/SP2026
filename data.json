@@ -1332,58 +1332,58 @@
       "bonusGames": {
         "groupWinners": {
           "A": [
-            "",
-            ""
+            "Meksiko",
+            "Južna Koreja"
           ],
           "B": [
-            "",
-            ""
+            "Švicarska",
+            "BiH"
           ],
           "C": [
-            "",
-            ""
+            "Brazil",
+            "Maroko"
           ],
           "D": [
-            "",
-            ""
+            "Turska",
+            "Paragvaj"
           ],
           "E": [
-            "",
-            ""
+            "Njemačka",
+            "Obala Bijelokosti"
           ],
           "F": [
-            "",
-            ""
+            "Nizozemska",
+            "Japan"
           ],
           "G": [
-            "",
-            ""
+            "Belgija",
+            "Egipat"
           ],
           "H": [
-            "",
-            ""
+            "Španjolska",
+            "Urugvaj"
           ],
           "I": [
-            "",
-            ""
+            "Francuska",
+            "Senegal"
           ],
           "J": [
-            "",
-            ""
+            "Argentina",
+            "Alžir"
           ],
           "K": [
-            "",
-            ""
+            "Portugal",
+            "Kolumbija"
           ],
           "L": [
-            "",
-            ""
+            "Engleska",
+            "Hrvatska"
           ]
         },
-        "champion": "",
-        "topScorer": "",
-        "mostGoals": "",
-        "zeroPoints": ""
+        "champion": "Španjolska",
+        "topScorer": "Ronaldo",
+        "mostGoals": "Portugal",
+        "zeroPoints": "Haiti"
       },
       "1781987325460": {
         "ph": 4,
