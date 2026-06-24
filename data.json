@@ -380,8 +380,8 @@
       "id": 1782163652521,
       "h": "Kolumbija",
       "a": "DR Kongo",
-      "rh": null,
-      "ra": null,
+      "rh": 1,
+      "ra": 0,
       "fdid": "537406"
     },
     {
@@ -1437,7 +1437,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-24T06:00:52.000+02:00"
+    "lastChecked": "2026-06-24T06:15:26.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
