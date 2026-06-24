@@ -388,16 +388,16 @@
       "id": 1782163659581,
       "h": "BiH",
       "a": "Katar",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 1,
       "fdid": "537338"
     },
     {
       "id": 1782163664874,
       "h": "Švicarska",
       "a": "Kanada",
-      "rh": null,
-      "ra": null,
+      "rh": 2,
+      "ra": 1,
       "fdid": "537337"
     },
     {
@@ -1533,7 +1533,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-24T23:00:50.000+02:00"
+    "lastChecked": "2026-06-24T23:15:24.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
