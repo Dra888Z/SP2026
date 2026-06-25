@@ -436,16 +436,16 @@
       "id": 1782404469039,
       "h": "Curaco",
       "a": "Obala Bjelokosti",
-      "rh": null,
-      "ra": null,
+      "rh": 0,
+      "ra": 2,
       "fdid": "537356"
     },
     {
       "id": 1782404486428,
       "h": "Ekvador",
       "a": "Njemačka",
-      "rh": null,
-      "ra": null,
+      "rh": 2,
+      "ra": 1,
       "fdid": "537355"
     },
     {
@@ -1773,7 +1773,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-26T00:00:56.000+02:00"
+    "lastChecked": "2026-06-26T00:15:26.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
