@@ -420,16 +420,16 @@
       "id": 1782163688261,
       "h": "Češka",
       "a": "Meksiko",
-      "rh": null,
-      "ra": null,
+      "rh": 0,
+      "ra": 3,
       "fdid": "537331"
     },
     {
       "id": 1782163699500,
       "h": "Južna Afrika",
       "a": "Južna Koreja",
-      "rh": null,
-      "ra": null,
+      "rh": 1,
+      "ra": 0,
       "fdid": "537332"
     }
   ],
@@ -1533,7 +1533,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-25T05:00:46.000+02:00"
+    "lastChecked": "2026-06-25T05:15:20.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
