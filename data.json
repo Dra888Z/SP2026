@@ -460,8 +460,8 @@
       "id": 1782404502755,
       "h": "Tunis",
       "a": "Nizozemska",
-      "rh": null,
-      "ra": null,
+      "rh": 1,
+      "ra": 3,
       "fdid": "537361"
     },
     {
@@ -1773,7 +1773,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-26T02:45:29.000+02:00"
+    "lastChecked": "2026-06-26T03:00:54.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
