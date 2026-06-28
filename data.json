@@ -584,6 +584,126 @@
       "ra": null,
       "fdid": "537417",
       "rt": true
+    },
+    {
+      "id": 1782643752550,
+      "h": "Brazil",
+      "a": "Japan",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643759268,
+      "h": "Njemačka",
+      "a": "Paragvaj",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643766394,
+      "h": "Nizozemska",
+      "a": "Maroko",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643778655,
+      "h": "Obala Bjelokosti",
+      "a": "Norveška",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643784156,
+      "h": "Francuska",
+      "a": "Švedska",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643794298,
+      "h": "Meksiko",
+      "a": "Ekvador",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643803646,
+      "h": "Engleska",
+      "a": "DR Kongo",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643810614,
+      "h": "Belgija",
+      "a": "Senegal",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643816506,
+      "h": "SAD",
+      "a": "BiH",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643825053,
+      "h": "Španjolska",
+      "a": "Austrija",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643830573,
+      "h": "Portugal",
+      "a": "Hrvatska",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643837710,
+      "h": "Švicarska",
+      "a": "Alžir",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643847518,
+      "h": "Australija",
+      "a": "Egipat",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643856890,
+      "h": "Argentina",
+      "a": "Zelenortska Rep.",
+      "rh": null,
+      "ra": null,
+      "rt": true
+    },
+    {
+      "id": 1782643862986,
+      "h": "Kolumbija",
+      "a": "Gana",
+      "rh": null,
+      "ra": null,
+      "rt": true
     }
   ],
   "tips": {
