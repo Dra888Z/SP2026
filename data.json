@@ -556,16 +556,16 @@
       "id": 1782404655375,
       "h": "Alžir",
       "a": "Austrija",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 3,
       "fdid": "537402"
     },
     {
       "id": 1782404661402,
       "h": "Jordan",
       "a": "Argentina",
-      "rh": null,
-      "ra": null,
+      "rh": 1,
+      "ra": 3,
       "fdid": "537401"
     },
     {
@@ -1941,7 +1941,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-28T06:00:45.000+02:00"
+    "lastChecked": "2026-06-28T06:15:19.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
