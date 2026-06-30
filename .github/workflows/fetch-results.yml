@@ -61,12 +61,14 @@ jobs:
 
                       # Produžeci i penali (za RT utakmice)
                       if m.get('rt'):
+                          ft = score.get("fullTime") or {}
                           et = score.get("extraTime") or {}
                           pen = score.get("penalties") or {}
                           if et.get("home") is not None:
-                              m["eth"] = et["home"]
-                              m["eta"] = et["away"]
-                              print(f"    Produžeci: {m['eth']}:{m['eta']}")
+                              # API vraća kumulativ; pohranjujemo DODATNE golove u produžetku
+                              m["eth"] = et["home"] - (ft.get("home") or 0)
+                              m["eta"] = et["away"] - (ft.get("away") or 0)
+                              print(f"    Goli u produžetku: {m['eth']}:{m['eta']}")
                           if pen.get("home") is not None:
                               m["pth"] = pen["home"]
                               m["pta"] = pen["away"]
