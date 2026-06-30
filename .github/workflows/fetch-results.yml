@@ -31,11 +31,7 @@ jobs:
           with open('data.json', 'r', encoding='utf-8') as f:
               data = json.load(f)
 
-          # Provjeri: utakmice bez rezultata ILI RT utakmice kojima nedostaju podaci o produžecima
-          to_check = [m for m in data['matches'] if m.get('fdid') and (
-              m.get('rh') is None or
-              (m.get('rt') and not m.get('etFetched'))
-          )]
+          to_check = [m for m in data['matches'] if m.get('fdid') and m.get('rh') is None]
           print(f"Utakmice za provjeru: {len(to_check)}")
 
           updated = 0
@@ -50,30 +46,11 @@ jobs:
                   print(f"  [{m['h']} vs {m['a']}] fdid={m['fdid']} → {status}")
 
                   if status == "FINISHED":
-                      score = fd["score"]
-
-                      # Regularno vrijeme (uvijek)
-                      if m.get('rh') is None:
-                          m["rh"] = score["fullTime"]["home"]
-                          m["ra"] = score["fullTime"]["away"]
-                          print(f"    RT rezultat: {m['rh']}:{m['ra']}")
-                          updated += 1
-
-                      # Produžeci i penali (za RT utakmice)
-                      if m.get('rt'):
-                          ft = score.get("fullTime") or {}
-                          et = score.get("extraTime") or {}
-                          pen = score.get("penalties") or {}
-                          if et.get("home") is not None:
-                              # API vraća kumulativ; pohranjujemo DODATNE golove u produžetku
-                              m["eth"] = et["home"] - (ft.get("home") or 0)
-                              m["eta"] = et["away"] - (ft.get("away") or 0)
-                              print(f"    Goli u produžetku: {m['eth']}:{m['eta']}")
-                          if pen.get("home") is not None:
-                              m["pth"] = pen["home"]
-                              m["pta"] = pen["away"]
-                              print(f"    Penali: {m['pth']}:{m['pta']}")
-                          m["etFetched"] = True  # ne provjeravaj više
+                      score = fd["score"]["fullTime"]
+                      m["rh"] = score["home"]
+                      m["ra"] = score["away"]
+                      print(f"    Rezultat: {m['rh']}:{m['ra']}")
+                      updated += 1
               except Exception as e:
                   print(f"  Greška za fdid {m.get('fdid')}: {e}")
 
