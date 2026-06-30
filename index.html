@@ -829,7 +829,7 @@ function renderMatches() {
       <td colspan="6">
         <div class="rt-detail">
           <div class="rt-detail-item">
-            <span class="rt-detail-label">⏱ Produžeci:</span>
+            <span class="rt-detail-label">⏱ Goli u prod.:</span>
             <input type="number" class="score-in-sm" value="${m.eth ?? ''}" min="0" max="99" placeholder="–"
               onchange="updateEtField(${m.id},'eth',this.value)">
             <span class="score-sep">:</span>
@@ -909,7 +909,10 @@ function renderPlayer(player) {
       <td class="score actual">${(() => {
         if (!hasResult) return '<span style="color:#cbd5e1">–:–</span>';
         let r = m.rh+':'+m.ra;
-        if (m.rt && m.eth != null) r += `<span class="rt-extra"><span class="rt-extra-label">p.vr.</span> ${m.eth}:${m.eta}</span>`;
+        if (m.rt && m.eth != null && (m.eth > 0 || m.eta > 0)) {
+          const etH = (m.rh ?? 0) + m.eth, etA = (m.ra ?? 0) + m.eta;
+          r += `<span class="rt-extra"><span class="rt-extra-label">p.vr.</span> ${etH}:${etA}</span>`;
+        }
         if (m.rt && m.pth != null) r += `<span class="rt-extra"><span class="rt-extra-label">11m</span> ${m.pth}:${m.pta}</span>`;
         return r;
       })()}</td>
