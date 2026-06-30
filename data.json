@@ -607,8 +607,8 @@
       "id": 1782643766394,
       "h": "Nizozemska",
       "a": "Maroko",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 4,
       "rt": true,
       "fdid": "537418"
     },
@@ -2173,7 +2173,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-06-30T05:45:24.000+02:00"
+    "lastChecked": "2026-06-30T06:00:48.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
