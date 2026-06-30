@@ -282,7 +282,7 @@
     .badge { width: 26px; height: 26px; font-size: 13px; }
 
     /* Utakmice panel */
-    #panel-utakmice tbody tr { padding: 10px 90px 10px 12px; }
+    #panel-utakmice tbody tr:not(.rt-detail-row) { padding: 10px 90px 10px 12px; }
     #panel-utakmice td:nth-child(3) { display: block; margin-top: 4px; }
     #panel-utakmice td:nth-child(4) {
       position: absolute; top: 10px; right: 6px;
@@ -295,6 +295,11 @@
     #panel-utakmice td:nth-child(6) {
       position: absolute; bottom: 10px; right: 8px;
     }
+    /* RT detail red — override mobile hide */
+    #panel-utakmice .rt-detail-row { padding: 0; position: static; }
+    #panel-utakmice .rt-detail-row td { display: block !important; padding: 6px 12px 10px !important; }
+    #panel-utakmice .rt-detail { flex-direction: column; gap: 8px; }
+    #panel-utakmice .rt-detail-label { min-width: 80px; }
 
     /* Player panels */
     #panel-drazen tbody tr, #panel-dinko tbody tr, #panel-matej tbody tr, #panel-nikola tbody tr { padding: 10px 44px 10px 12px; }
