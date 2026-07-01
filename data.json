@@ -634,8 +634,8 @@
       "id": 1782643794298,
       "h": "Meksiko",
       "a": "Ekvador",
-      "rh": null,
-      "ra": null,
+      "rh": 2,
+      "ra": 0,
       "rt": true,
       "fdid": "537425"
     },
@@ -2221,7 +2221,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-07-01T06:00:49.000+02:00"
+    "lastChecked": "2026-07-01T06:15:26.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
