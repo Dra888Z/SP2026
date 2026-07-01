@@ -652,8 +652,8 @@
       "id": 1782643810614,
       "h": "Belgija",
       "a": "Senegal",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 2,
       "rt": true,
       "fdid": "537422"
     },
@@ -2269,7 +2269,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-07-02T00:50:39.000+02:00"
+    "lastChecked": "2026-07-02T01:00:52.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
