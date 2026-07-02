@@ -670,8 +670,8 @@
       "id": 1782643825053,
       "h": "Španjolska",
       "a": "Austrija",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 0,
       "rt": true,
       "fdid": "537420"
     },
@@ -2305,7 +2305,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-07-02T23:00:53.000+02:00"
+    "lastChecked": "2026-07-02T23:15:24.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
