@@ -715,8 +715,8 @@
       "id": 1782643862986,
       "h": "Kolumbija",
       "a": "Gana",
-      "rh": null,
-      "ra": null,
+      "rh": 2,
+      "ra": 0,
       "rt": true,
       "fdid": "537430"
     }
@@ -2317,7 +2317,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-07-04T05:30:35.000+02:00"
+    "lastChecked": "2026-07-04T05:45:20.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
