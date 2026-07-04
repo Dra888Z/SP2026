@@ -706,8 +706,8 @@
       "id": 1782643856890,
       "h": "Argentina",
       "a": "Zelenortska Rep.",
-      "rh": null,
-      "ra": null,
+      "rh": 3,
+      "ra": 2,
       "rt": true,
       "fdid": "537427"
     },
@@ -2317,7 +2317,7 @@
   },
   "settings": {
     "checkIntervalMinutes": 2,
-    "lastChecked": "2026-07-04T02:45:22.000+02:00"
+    "lastChecked": "2026-07-04T03:00:45.000+02:00"
   },
   "bonusGames": {
     "groupWinners": {
