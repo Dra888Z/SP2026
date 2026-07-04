@@ -697,8 +697,8 @@
       "id": 1782643847518,
       "h": "Australija",
       "a": "Egipat",
-      "rh": 3,
-      "ra": 5,
+      "rh": 1,
+      "ra": 1,
       "rt": true,
       "fdid": "537428"
     },
@@ -706,8 +706,8 @@
       "id": 1782643856890,
       "h": "Argentina",
       "a": "Zelenortska Rep.",
-      "rh": 3,
-      "ra": 2,
+      "rh": 1,
+      "ra": 1,
       "rt": true,
       "fdid": "537427"
     },
@@ -715,7 +715,7 @@
       "id": 1782643862986,
       "h": "Kolumbija",
       "a": "Gana",
-      "rh": 2,
+      "rh": 1,
       "ra": 0,
       "rt": true,
       "fdid": "537430"
