@@ -724,15 +724,15 @@
       "id": 1783147864650,
       "h": "Kanada",
       "a": "Maroko",
-      "rh": null,
-      "ra": null
+      "rh": 0,
+      "ra": 3
     },
     {
       "id": 1783147877121,
       "h": "Paragvaj",
       "a": "Francuska",
-      "rh": null,
-      "ra": null
+      "rh": 0,
+      "ra": 1
     }
   ],
   "tips": {
