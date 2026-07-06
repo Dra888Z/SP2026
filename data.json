@@ -747,6 +747,20 @@
       "a": "Engleska",
       "rh": 2,
       "ra": 3
+    },
+    {
+      "id": 1783313190322,
+      "h": "Portugal",
+      "a": "Španjolska",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1783313206400,
+      "h": "SAD",
+      "a": "Belgija",
+      "rh": null,
+      "ra": null
     }
   ],
   "tips": {
