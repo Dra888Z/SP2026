@@ -752,15 +752,15 @@
       "id": 1783313190322,
       "h": "Portugal",
       "a": "Španjolska",
-      "rh": null,
-      "ra": null
+      "rh": 0,
+      "ra": 1
     },
     {
       "id": 1783313206400,
       "h": "SAD",
       "a": "Belgija",
-      "rh": null,
-      "ra": null
+      "rh": 1,
+      "ra": 4
     }
   ],
   "tips": {
