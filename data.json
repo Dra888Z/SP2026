@@ -775,6 +775,34 @@
       "a": "Kolumbija",
       "rh": 0,
       "ra": 0
+    },
+    {
+      "id": 1783495598095,
+      "h": "Francuska",
+      "a": "Maroko",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1783495605529,
+      "h": "Španjolska",
+      "a": "Belgija",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1783495615143,
+      "h": "Norveška",
+      "a": "Engleska",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1783495626377,
+      "h": "Argentina",
+      "a": "Švicarska",
+      "rh": null,
+      "ra": null
     }
   ],
   "tips": {
