@@ -794,15 +794,15 @@
       "id": 1783495615143,
       "h": "Norveška",
       "a": "Engleska",
-      "rh": null,
-      "ra": null
+      "rh": 1,
+      "ra": 1
     },
     {
       "id": 1783495626377,
       "h": "Argentina",
       "a": "Švicarska",
-      "rh": null,
-      "ra": null
+      "rh": 1,
+      "ra": 1
     }
   ],
   "tips": {
