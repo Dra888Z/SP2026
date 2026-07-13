@@ -803,6 +803,20 @@
       "a": "Švicarska",
       "rh": 1,
       "ra": 1
+    },
+    {
+      "id": 1783925208320,
+      "h": "Francuska",
+      "a": "Španjolska",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1783925215444,
+      "h": "Engleska",
+      "a": "Argentina",
+      "rh": null,
+      "ra": null
     }
   ],
   "tips": {
