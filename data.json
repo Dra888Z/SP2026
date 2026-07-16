@@ -817,6 +817,20 @@
       "a": "Argentina",
       "rh": 1,
       "ra": 2
+    },
+    {
+      "id": 1784176993847,
+      "h": "Francuska",
+      "a": "Engleska",
+      "rh": null,
+      "ra": null
+    },
+    {
+      "id": 1784177009888,
+      "h": "Španjolska",
+      "a": "Argentina",
+      "rh": null,
+      "ra": null
     }
   ],
   "tips": {
