@@ -829,8 +829,8 @@
       "id": 1784177009888,
       "h": "Španjolska",
       "a": "Argentina",
-      "rh": null,
-      "ra": null
+      "rh": 0,
+      "ra": 0
     }
   ],
   "tips": {
@@ -2782,8 +2782,8 @@
         "Hrvatska"
       ]
     },
-    "champion": "",
-    "topScorer": "",
+    "champion": "Španjolska",
+    "topScorer": "Mbappe",
     "mostGoals": [
       "Njemačka",
       "Nizozemska",
